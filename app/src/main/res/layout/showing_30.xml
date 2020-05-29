@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/showing_include" />
+
+    <EditText
+        android:id="@+id/EditText_On_PassingValueExample"
+        android:imeOptions="flagNoFullscreen|flagNoExtractUi"
+        android:layout_marginLeft="22dp"
+        android:lineSpacingExtra="16dp"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textSize="36dp"
+        android:hint="请输入一个参数传递到Activity B"
+        android:textColorHint="@android:color/white"
+        android:layout_height="120dp"/>
+
+
+    <Button
+        android:id="@+id/Button_On_PassingValueExample"
+        android:text="Goto Activity B"
+        style="@style/showingOneTouchStyle"/>
+
+
+
+
+</RelativeLayout>

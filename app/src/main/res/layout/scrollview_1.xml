@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView_1"
+    style="@style/homeMainScrollview">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a1"
+            android:layout_marginTop="@dimen/homeTopToolBarHeight"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                app:srcCompat="@drawable/zzz_1" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="文本视图" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A1"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="TextView" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_1"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a2"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                app:srcCompat="@drawable/zzz_2" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="文本编辑框" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A2"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="EditText" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_2"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a3"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_3" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="按钮控件" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A3"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="Button" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_3"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a4"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_4" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="单选按钮" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A4"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="RadioButton" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_4"
+                style="@style/homeListNextButton"/>
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a5"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_5" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="复选框" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A5"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="CheckBox" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_5"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a6"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_6" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="评分条" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A6"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="RatingBar" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_6"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a7"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_7" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="拖动条" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A7"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="SeekBar" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_7"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a8"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_8" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="进度条" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A8"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="ProgressBar" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_8"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a9"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_9" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="开关按钮" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A9"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="ToggleButton/Switch" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_9"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a10"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_10" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="下拉框" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A10"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="Spinner" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_10"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a11"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_11" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="自动完成编辑框" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A11"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="AutoCompleteTextView" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_11"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a12"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_12" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="选中文本视图" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A12"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="CheckedTextView" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_12"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a13"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_13" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="文字交换器" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A13"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="TextSwitcher" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_13"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a14"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_14" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="图片交换器"/>
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A14"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="ImageSwitcher" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_14"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a15"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_15" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="飞掠视图适配器" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A15"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="AdapterViewFlipper" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_15"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a16"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_16" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="图像按钮" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A16"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="ImageButton" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_16"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a17"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_17" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="图像视图" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A17"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="ImageView" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_17"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a18"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_18" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="视频视图" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A18"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="VideoView" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_18"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a19"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_19" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="文字时钟" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A19"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="TextClock" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_19"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_a20"
+            android:layout_marginBottom="@dimen/homeBottomHeight"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_20" />
+
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+
+                <TextView
+                    style="@style/homeListToolBarBigText"
+                    android:text="计时器" />
+
+                <TextView
+                    android:id="@+id/homeToNextTitle_A20"
+                    style="@style/homeListToolBarSmallText"
+                    android:text="Chronometer" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/show_code_20"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>

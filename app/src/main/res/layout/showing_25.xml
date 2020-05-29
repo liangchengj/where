@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/showing_include" />
+
+    <ScrollView
+        android:scrollbarThumbVertical="@android:color/transparent"
+        android:layout_below="@id/codeTopToolbar"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_above="@id/Button_On_GetPhoneDetailsExample"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/TextView_On_GetPhoneDetailsExample"
+            android:layout_marginLeft="22dp"
+            android:lineSpacingExtra="16dp"
+            android:layout_width="match_parent"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_height="match_parent"/>
+
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/Button_On_GetPhoneDetailsExample"
+        android:text="Get Phone Details"
+        style="@style/showingOneTouchStyle"/>
+
+</RelativeLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/showing_include" />
+
+    <CheckedTextView
+        android:id="@+id/CheckedTextView_On_CheckedTextViewExample"
+        android:text="CheckedTextView"
+        android:gravity="center"
+        android:textSize="50dp"
+        android:checked="true"
+        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+        android:layout_centerInParent="true"
+        android:layout_width="480dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="CheckTextView类似于CheckBox"
+        style="@style/showingTipTextStyle"/>
+
+</RelativeLayout>

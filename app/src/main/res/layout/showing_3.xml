@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/showing_include" />
+
+    <Button
+        android:id="@+id/Button_Example"
+        android:layout_width="360dp"
+        android:layout_height="120dp"
+        android:text="Button"
+        android:textSize="58dp"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        style="?attr/borderlessButtonStyle" />
+
+    <TextView
+        android:text="Button可以用来响应点击和长按事件"
+        style="@style/showingTipTextStyle"/>
+
+</RelativeLayout>

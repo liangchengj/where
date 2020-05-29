@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/home_main_layout">
+
+
+<!-- <RelativeLayout
+     android:id="@+id/menu"
+     android:visibility="gone"
+     android:clickable="true"
+     android:background="@drawable/home_scrollview_top_right_bac"
+     android:orientation="vertical"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+
+
+  <LinearLayout
+      android:orientation="vertical"
+      android:clickable="true"
+      android:layout_centerInParent="true"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+   <android.support.v7.widget.Toolbar
+       android:id="@+id/tool_1"
+       style="@style/home_scrollview_top_right_toolbar_style">
+
+    <ImageView
+        android:id="@+id/i1"
+        style="@style/home_scrollview_top_right_check_icon_style"/>
+
+
+    <TextView
+        android:id="@+id/t1"
+        style="@style/home_scrollview_top_right_textview_style"/>
+
+   </android.support.v7.widget.Toolbar>
+
+
+   <android.support.v7.widget.Toolbar
+       android:id="@+id/tool_2"
+       style="@style/home_scrollview_top_right_toolbar_style">
+
+    <ImageView
+        android:id="@+id/i2"
+        style="@style/home_scrollview_top_right_check_icon_style"/>
+
+    <TextView
+        android:id="@+id/t2"
+        style="@style/home_scrollview_top_right_textview_style"/>
+
+   </android.support.v7.widget.Toolbar>
+
+
+   <android.support.v7.widget.Toolbar
+       android:id="@+id/tool_3"
+       style="@style/home_scrollview_top_right_toolbar_style">
+
+    <ImageView
+        android:id="@+id/i3"
+        style="@style/home_scrollview_top_right_check_icon_style"/>
+
+    <TextView
+        android:id="@+id/t3"
+        style="@style/home_scrollview_top_right_textview_style"/>
+
+   </android.support.v7.widget.Toolbar>
+
+
+   <android.support.v7.widget.Toolbar
+       android:id="@+id/tool_4"
+       style="@style/home_scrollview_top_right_toolbar_style">
+
+    <ImageView
+        android:id="@+id/i4"
+        style="@style/home_scrollview_top_right_check_icon_style"/>
+
+    <TextView
+        android:id="@+id/t4"
+        style="@style/home_scrollview_top_right_textview_style"/>
+
+   </android.support.v7.widget.Toolbar>
+
+
+   <android.support.v7.widget.Toolbar
+       android:id="@+id/tool_5"
+       style="@style/home_scrollview_top_right_toolbar_style">
+
+    <ImageView
+        android:id="@+id/i5"
+        style="@style/home_scrollview_top_right_check_icon_style"/>
+
+    <TextView
+        android:id="@+id/t5"
+        style="@style/home_scrollview_top_right_textview_style"/>
+   </android.support.v7.widget.Toolbar>
+
+
+
+   <android.support.v7.widget.Toolbar
+       android:id="@+id/tool_6"
+       style="@style/home_scrollview_top_right_toolbar_style">
+
+    <ImageView
+        android:id="@+id/i6"
+        style="@style/home_scrollview_top_right_check_icon_style"/>
+
+    <TextView
+        android:id="@+id/t6"
+        style="@style/home_scrollview_top_right_textview_style"/>
+   </android.support.v7.widget.Toolbar>
+
+
+
+   <android.support.v7.widget.Toolbar
+       android:id="@+id/tool_7"
+       android:layout_marginBottom="20dp"
+       style="@style/home_scrollview_top_right_toolbar_style">
+
+    <ImageView
+        android:id="@+id/i7"
+        style="@style/home_scrollview_top_right_check_icon_style"/>
+
+    <TextView
+        android:id="@+id/t7"
+        style="@style/home_scrollview_top_right_textview_style"/>
+
+   </android.support.v7.widget.Toolbar>
+  </LinearLayout>
+
+
+ </RelativeLayout>-->
+
+
+ <RelativeLayout
+     android:id="@+id/where"
+     android:clickable="true"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+
+ <include layout="@layout/scrollview_7"/>
+
+ <include layout="@layout/scrollview_6"/>
+
+ <include layout="@layout/scrollview_5"/>
+
+ <include layout="@layout/scrollview_4"/>
+
+ <include layout="@layout/scrollview_3"/>
+
+ <include layout="@layout/scrollview_2"/>
+
+ <include layout="@layout/scrollview_1"/>
+
+ <include layout="@layout/home_top_toolbar" />
+
+
+ <android.support.v7.widget.Toolbar
+     android:id="@+id/homeBottom"
+     android:visibility="gone"
+     android:background="@color/homeTopToolBarBac"
+     android:layout_width="match_parent"
+     android:layout_height="@dimen/homeBottomHeight"
+     android:layout_alignParentBottom="true" />
+
+ </RelativeLayout>
+
+</RelativeLayout>

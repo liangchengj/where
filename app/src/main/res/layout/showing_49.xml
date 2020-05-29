@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/RelativeLayout_On_InterFragmentCommunicationExample">
+
+    <include layout="@layout/showing_include" />
+
+    <fragment
+        android:id="@+id/Fragment_A_On_InterFragmentCommunicationExample"
+        android:layout_below="@+id/codeTopToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.meyou.where.Example.FragmentA"/>
+
+
+    <fragment
+        android:id="@+id/Fragment_B_On_InterFragmentCommunicationExample"
+        android:layout_below="@id/Fragment_A_On_InterFragmentCommunicationExample"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.meyou.where.Example.FragmentB"/>
+
+</RelativeLayout>

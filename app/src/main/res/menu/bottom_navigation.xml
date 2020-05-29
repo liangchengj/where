@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_1"
+        android:icon="@drawable/next_back_to_home_drawable"
+        android:title="One"/>
+
+    <item
+        android:id="@+id/action_2"
+        android:icon="@drawable/next_property_button_drawable"
+        android:title="Two"/>
+
+    <item
+        android:id="@+id/action_3"
+        android:icon="@drawable/next_showing_button_drawable"
+        android:title="Three"/>
+
+</menu>

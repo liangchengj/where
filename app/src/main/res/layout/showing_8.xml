@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <include layout="@layout/showing_include" />
+
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ProgressBar_On_ProgressBarExample"
+        android:layout_marginBottom="40dp"
+        tools:ignore="RtlCompat" />
+
+    <ProgressBar
+        android:id="@+id/ProgressBar_On_ProgressBarExample"
+        android:padding="50dp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        tools:ignore="RtlCompat" />
+
+    <Button
+        android:id="@+id/Button_On_ProgressBarExample"
+        android:text="Click Progress"
+        style="@style/showingOneTouchStyle" />
+
+</RelativeLayout>

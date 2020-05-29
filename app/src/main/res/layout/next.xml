@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+    <ScrollView
+        android:scrollbarSize="15dp"
+        android:id="@+id/nextScrollViewWithCode"
+        android:fadeScrollbars="false"
+        android:scrollbars="vertical"
+        android:scrollbarThumbVertical="@drawable/next_scrollview_bar_drawable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:textSize="19dp"
+                android:visibility="gone"
+                android:textColor="@color/homeListToolBarText"
+                android:gravity="left"
+                android:id="@+id/loadCodeTextView"
+                android:paddingLeft="48dp"
+                android:paddingTop="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/nextTopToolBarHeight"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="8dp"
+                android:lineSpacingExtra="16dp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/nextTopToolBar"
+        android:background="@drawable/next_top_toolbar_background_drawable"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nextTopToolBarHeight">
+
+    <LinearLayout
+       android:layout_gravity="center_vertical|left"
+        android:orientation="horizontal"
+        android:id="@+id/toolbar5"
+        android:background="@android:color/transparent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+        <Button
+            android:layout_gravity="center_vertical"
+            android:id="@+id/back"
+            android:background="@drawable/next_back_to_home_drawable"
+            android:layout_width="@dimen/next_back_to_home_button_size"
+            android:layout_height="@dimen/next_back_to_home_button_size"
+            style="?attr/borderlessButtonStyle" />
+
+        <Button
+            android:layout_gravity="center_vertical"
+            android:id="@+id/nextProperty"
+            android:layout_marginLeft="@dimen/next_back_to_home_button_edge"
+            android:background="@drawable/next_property_button_drawable"
+            android:layout_width="@dimen/next_back_to_home_button_size"
+            android:layout_height="@dimen/next_back_to_home_button_size"
+            style="?attr/borderlessButtonStyle" />
+        <Button
+            android:layout_gravity="center_vertical"
+            android:id="@+id/nextShow"
+            android:layout_marginLeft="@dimen/next_back_to_home_button_edge"
+            android:background="@drawable/next_showing_button_drawable"
+            android:layout_width="@dimen/next_back_to_home_button_size"
+            android:layout_height="@dimen/next_back_to_home_button_size"
+            style="?attr/borderlessButtonStyle" />
+
+        <TextView
+            android:gravity="left"
+            android:textColor="@color/nextColorAccent"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/nextTopTextView"
+            android:singleLine="true"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp" />
+
+
+
+    </LinearLayout>
+        <Button
+            android:id="@+id/nextTopRightButton"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/next_back_to_home_button_size"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@color/nextColorAccent"
+            android:text="MainActivity.java"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center|right"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:onClick="topRightClick"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/nextSeeRe"
+        android:visibility="gone"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ScrollView
+        android:visibility="gone"
+        android:layout_marginTop="12dp"
+        android:background="@color/nextColorAccent"
+        android:id="@+id/nextScrollviewTopRight"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/nextScrollViewButton_1"
+                style="@style/nextScrollViewTopRightButton"/>
+
+            <Button
+                android:id="@+id/nextScrollViewButton_2"
+                style="@style/nextScrollViewTopRightButton"/>
+
+            <Button
+                android:id="@+id/nextScrollViewButton_3"
+                style="@style/nextScrollViewTopRightButton"/>
+
+            <Button
+                android:id="@+id/nextScrollViewButton_4"
+                style="@style/nextScrollViewTopRightButton"/>
+
+
+
+            <Button
+                android:id="@+id/nextScrollViewButton_5"
+                style="@style/nextScrollViewTopRightButton"/>
+
+            <Button
+                android:id="@+id/nextScrollViewButton_6"
+                style="@style/nextScrollViewTopRightButton"/>
+
+            <Button
+                android:id="@+id/nextScrollViewButton_7"
+                style="@style/nextScrollViewTopRightButton"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

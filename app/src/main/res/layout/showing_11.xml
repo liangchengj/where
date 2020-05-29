@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/showing_include" />
+
+    <AutoCompleteTextView
+        android:id="@+id/AutoCompleteTextView_Example"
+        android:layout_below="@id/codeTopToolbar"
+        android:imeOptions="flagNoExtractUi|flagNoFullscreen"
+        android:completionThreshold="1"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:textSize="58dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="380dp"
+        android:layout_height="120dp" />
+
+    <TextView
+        android:id="@+id/TextView_On_AutoCompleteTextViewExample"
+        android:text="你可以输入：\n衡阳，长沙，湘潭，武汉，北京，重庆，四川，防城港，上海，\n大连，株洲，广州，南宁，乌鲁木齐\n\n当你输入与上相关字符时AutoCompleteTextView将自动提示你填充"
+        style="@style/showingTipTextStyle" />
+
+</RelativeLayout>
