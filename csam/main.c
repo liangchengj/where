@@ -1,16 +1,19 @@
 #include <stdio.h>
-#include <stdint.h>
-#include <string.h>
+#include <stdarg.h>
 
-int main(int argc, char const *argv[])
+void read_char(int i, ...)
 {
-    char *usr;
-    char *pwd;
+    char c;
+    va_list ap;
+    va_start(ap, i);
+    while ((c = va_arg(ap, char)) != 0)
+    {
+        printf("%c", c);
+    }
+    va_end(ap);
+}
 
-    printf("请输入用户名：");
-    scanf("%s", &usr);
-    printf("请输入密码：");
-    scanf("%s", &pwd);
-
-    return 0;
+int main()
+{
+    read_char(0, 'a', 'b', 'c', '\0');
 }
