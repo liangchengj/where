@@ -1,19 +1,19 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-void read_char(int i, ...)
+void print_int(int args, ...)
 {
-    char c;
-    va_list ap;
-    va_start(ap, i);
-    while ((c = va_arg(ap, char)) != 0)
+    va_list ap;         //va_list 用来保存传给函数的其他参数。
+    va_start(ap, args); //说明可变参数从哪里开始
+    for (int i = 0; i < args; i++)
     {
-        printf("%c", c);
+        printf("argument: %s\n", va_arg(ap, char const *));
     }
     va_end(ap);
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
-    read_char(0, 'a', 'b', 'c', '\0');
+    print_int(argc, &argv);
+    return 0;
 }
