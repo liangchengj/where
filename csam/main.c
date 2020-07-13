@@ -139,5 +139,9 @@ int main(int argc, char const *argv[])
     // printf("%s", toprnt);
     // printf("%s", ANSI_MOVE_CURSOR_POSTION(1, 10));
 
-    acolprnt(ANSI_FG_RED, "hello,world\n");
+    char const *msg = "hello,world\n";
+    acolprnt(ANSI_FG_RED, msg);
+    blackprnt(msg);
+    redprnt(msg);
+    
 }

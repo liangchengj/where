@@ -3,38 +3,57 @@
  * 
  * @author Liangcheng Juves
  */
-#ifndef ansicol_h
-#define ansicol_h
-#endif
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
+#ifndef ansicol_h
+#define ansicol_h
+#endif
+
 #include <stdio.h>
 #include <string.h>
 #include <malloc.h>
 
+/* Black text. */
 #define ANSI_FG_BLACK "\033[30m"
+/* Red text. */
 #define ANSI_FG_RED "\033[31m"
+/* Green text. */
 #define ANSI_FG_GREEN "\033[32m"
+/* Yellow text. */
 #define ANSI_FG_YELLOW "\033[33m"
+/* Blue text. */
 #define ANSI_FG_BLUE "\033[34m"
+/* Fuchsia text. */
 #define ANSI_FG_FUCHSIA "\033[35m"
+/* Cyan text. */
 #define ANSI_FG_CYAN "\033[36m"
+/* White text. */
 #define ANSI_FG_WHITE "\033[37m"
 
+/* The background color of the console is black. */
 #define ANSI_BG_BLACK "\033[40m"
+/* The background color of the console is red. */
 #define ANSI_BG_RED "\033[41m"
+/* The background color of the console is green. */
 #define ANSI_BG_GREEN "\033[42m"
+/* The background color of the console is yellow. */
 #define ANSI_BG_YELLOW "\033[43m"
+/* The background color of the console is blue. */
 #define ANSI_BG_BLUE "\033[44m"
+/* The background color of the console is fuchsia. */
 #define ANSI_BG_FUCHSIA "\033[45m"
+/* The background color of the console is cyan. */
 #define ANSI_BG_CYAN "\033[46m"
+/* The background color of the console is white. */
 #define ANSI_BG_WHITE "\033[47m"
 
+/* The console is displayed in the default state. */
 #define ANSI_NONE "\033[0m"
+/* The text is highlighted. */
 #define ANSI_HIGH_LIGHT "\033[1m"
 #define ANSI_UNDER_LINE "\033[4m"
 #define ANSI_FLASHING "\033[5m"
