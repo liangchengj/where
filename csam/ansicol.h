@@ -14,7 +14,7 @@ extern "C"
 
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
+#include <malloc.h>
 
 #define ANSI_FG_BLACK "\033[30m"
 #define ANSI_FG_RED "\033[31m"
@@ -43,37 +43,76 @@ extern "C"
 
 #define ANSI_CLEAR_SCREEN "\033[2J"
 #define ANSI_CLEAR_CONTENT_FROM_CURSOR_OF_EOL "\033[K"
-#define char const *ANSI_MOVE_CURSOR_POSTION(int y, int x);
 
-#define ANSI_MOVE_CURSOR_UP(n) "\033[" + n + "A"
-#define ANSI_MOVE_CURSOR_DOWN(n) "\033[" + n + "B"
-#define ANSI_MOVE_CURSOR_RIGHT(n) "\033[" + n + "C"
-#define ANSI_MOVE_CURSOR_LEFT(n) "\033[" + n + "D"
+#define ANSI_MOVE_CURSOR_UP(n) "\033[%dA"
+#define ANSI_MOVE_CURSOR_DOWN(n) "\033[%dB"
+#define ANSI_MOVE_CURSOR_RIGHT(n) "\033[%dC"
+#define ANSI_MOVE_CURSOR_LEFT(n) "\033[%dD"
+#define ANSI_MOVE_CURSOR_POSITION "\033[%d;%dH"
 
-    /**
-     * * Set cursor position (y column x row).
- * \033[y;xH
- *
- * @param {column} y
- * @param {row} x
- */
-    inline char const *ANSI_MOVE_CURSOR_POSTION(int y, int x)
+#define ANSI_SAVE_CURSOR_POSITION "\033[s"
+#define ANSI_SAVE_RESTORE_POSITION "\033[u"
+
+#define ANSI_HIDE_CURSOR "\033[?25l"
+#define ANSI_SHOW_CURSOR "\033[?25h"
+
+    void acolprnt(char const *ansicol, char const *str);
+    void blackprnt(char const *str);
+    void redprnt(char const *str);
+    void greenprnt(char const *str);
+    void yellowprnt(char const *str);
+    void blueprnt(char const *str);
+    void fuchsiaprnt(char const *str);
+    void cyanprnt(char const *str);
+    void whiteprnt(char const *str);
+
+    inline void acolprnt(char const *ansicol, char const *str)
     {
-        char const *begin = "\033[";
-        char const *str_y;
-        char const *middle = ";";
-        char const *str_x;
-        char const *end = "H";
+        char *toprnt = (char *)malloc(strlen(ansicol) + strlen(str));
+        strcpy(toprnt, ansicol);
+        strcat(toprnt, str);
+        strcat(toprnt, ANSI_NONE);
+        printf("%s", toprnt);
+    }
 
-        itoa(y, str_y, 10);
-        itoa(x, str_x, 10);
-        char *result = (char *)malloc(strlen(begin) + strlen(str_y) + strlen(middle) + strlen(str_x) + strlen(end));
-        strcpy(result, begin);
-        strcat(result, str_y);
-        strcat(result, middle);
-        strcat(result, str_x);
-        strcat(result, end);
-        return result;
+    inline void blackprnt(char const *str)
+    {
+        acolprnt(ANSI_FG_BLACK, str);
+    }
+
+    inline void redprnt(char const *str)
+    {
+        acolprnt(ANSI_FG_RED, str);
+    }
+
+    inline void greenprnt(char const *str)
+    {
+        acolprnt(ANSI_FG_GREEN, str);
+    }
+
+    inline void yellowprnt(char const *str)
+    {
+        acolprnt(ANSI_FG_YELLOW, str);
+    }
+
+    inline void blueprnt(char const *str)
+    {
+        acolprnt(ANSI_FG_BLUE, str);
+    }
+
+    inline void fuchsiaprnt(char const *str)
+    {
+        acolprnt(ANSI_FG_FUCHSIA, str);
+    }
+
+    inline void cyanprnt(char const *str)
+    {
+        acolprnt(ANSI_FG_CYAN, str);
+    }
+
+    inline void whiteprnt(char const *str)
+    {
+        acolprnt(ANSI_FG_WHITE, str);
     }
 
 #ifdef __cplusplus

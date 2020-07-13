@@ -129,13 +129,15 @@ char *base64_decode(char const *base64Str, char *debase64Str, int encodeStrLen)
 
 int main(int argc, char const *argv[])
 {
-    char const *msg = "hello,world\n";
-    char const *ansi = ANSI_FG_GREEN;
-    char *toprnt = (char *)malloc(strlen(ansi) + strlen(msg));
-    strcpy(toprnt, ansi);
-    strcat(toprnt, ANSI_MOVE_CURSOR_POSTION(1, 10));
-    strcat(toprnt, msg);
-    strcat(toprnt, ANSI_NONE);
-    // strcat(toprnt, ANSI_BOLD);
-    printf("%s", toprnt);
+    // char const *msg = "hello,world\n";
+    // char const *ansi = ANSI_FG_GREEN;
+    // char *toprnt = (char *)malloc(strlen(ansi) + strlen(msg));
+    // strcpy(toprnt, ansi);
+    // strcat(toprnt, ANSI_SHOW_CURSOR);
+    // strcat(toprnt, msg);
+    // strcat(toprnt, ANSI_NONE);
+    // printf("%s", toprnt);
+    // printf("%s", ANSI_MOVE_CURSOR_POSTION(1, 10));
+
+    acolprnt(ANSI_FG_RED, "hello,world\n");
 }
