@@ -8,16 +8,40 @@
  * 
  * @author Liangcheng Juves
  */
-#include <stdint.h>
-#include <stdio.h>
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 
 #ifndef base64_h
 #define base64_h
 #endif
 
-char base64_alphabet[] = {
-    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-    'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-    'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
+#include <stdint.h>
+#include <stdio.h>
+#include "c.h"
+
+    void b64enc(char const *src, char *dst);
+    void b64dec(char const *src, char *dst);
+
+    char b64_alphabet[] = {
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+        'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+        'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
+
+    void b64enc(char const *src, char *dst)
+    {
+        char *const out = (char *)malloc(strlen(src) * 8 * sizeof(char));
+        printf("%sb\n", src);
+    }
+
+    void b64dec(char const *src, char *dst)
+    {
+    }
+
+#ifdef __cplusplus
+}
+#endif

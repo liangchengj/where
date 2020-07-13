@@ -94,7 +94,7 @@ extern "C"
     col *prscolhex(char const *hex)
     {
         int count = 1;
-        col *dst;
+        col *dst = (col *)malloc(sizeof(col));
         for (size_t i = hex[0] == '#' ? 1 : 0;
              i < strlen(hex); i += 2)
         {
