@@ -20,7 +20,6 @@ extern "C"
 #define false 0
 #endif
 
-#include <string.h>
 #include <malloc.h>
 #include <assert.h>
 
@@ -33,25 +32,38 @@ extern "C"
 #define print(s) printf(s)
 #endif
 
-#if !defined(outln) && defined(print)
-#define outln() print("\n")
+#if !defined(cotln) && defined(print)
+#define cotln() print("\n")
 #endif
+
+    size_t ptrlen(void *x);
 
     void csup(char *src);
     void cslow(char *src);
     void cscrev(char *src);
+
     void cmvbts(char src, size_t lnum, size_t rnum);
 
-    size_t ptrlen(void *x);
-
-    size_t flen(FILE *f);
-
     char *strsub(char const *src, int start, int end);
+
+    size_t strmlen(FILE *f);
+    char *strmcs(FILE *f);
+
+    size_t ptrlen(void *x)
+    {
+        assert(x != NULL);
+        // x :: len
+        char *cpyptr = x;
+        char *tmp = (char *)x;
+        for (; *tmp; tmp++)
+            ;
+        return tmp - cpyptr;
+    }
 
     void csup(char *src)
     {
         assert(src != NULL);
-        for (size_t i = 0; i < strlen(src); i++)
+        for (size_t i = 0; i < ptrlen(src); i++)
         {
             if (src[i] >= 'a' && src[i] <= 'z')
             {
@@ -63,7 +75,7 @@ extern "C"
     void cslow(char *src)
     {
         assert(src != NULL);
-        for (size_t i = 0; i < strlen(src); i++)
+        for (size_t i = 0; i < ptrlen(src); i++)
         {
             if (src[i] >= 'A' && src[i] <= 'Z')
             {
@@ -75,9 +87,22 @@ extern "C"
     void cscrev(char *src)
     {
         assert(src != NULL);
-        for (size_t i = 0; i < strlen(src); i++)
+        for (size_t i = 0; i < ptrlen(src); i++)
         {
             src[i] ^= 32;
+        }
+    }
+
+    void cmvbts(char src, size_t lnum, size_t rnum)
+    {
+        assert(&src != NULL && &lnum != NULL && &rnum != NULL);
+        if (lnum != 0)
+        {
+            src <<= lnum;
+        }
+        if (rnum != 0)
+        {
+            src >>= rnum;
         }
     }
 
@@ -95,44 +120,29 @@ extern "C"
         return dst;
     }
 
-    void cmvbts(char src, size_t lnum, size_t rnum)
-    {
-        assert(&src != NULL && &lnum != NULL && &rnum != NULL);
-        if (lnum != 0)
-        {
-            src <<= lnum;
-        }
-        if (rnum != 0)
-        {
-            src >>= rnum;
-        }
-    }
-
-    size_t flen(FILE *f)
+    size_t strmlen(FILE *f)
     {
         assert(f != NULL);
         fseek(f, 0, SEEK_END);
         return ftell(f);
     }
 
-    size_t ptrlen(void *x)
+    char *strmcs(FILE *f)
     {
-        if (false)
+        assert(f != NULL);
+        size_t (*callstrmlen)(FILE *) = strmlen;
+        size_t strmlen = callstrmlen(f);
+        char *strmcs = (char *)malloc(strmlen);
+        fseek(f, 0, SEEK_SET);
+        size_t i = 0;
+        char c;
+        do
         {
-            return -1;
-        }
-        else
-        {
-            printf("%ld\n", sizeof(x));
-            printf("%d\n", (char **)x == NULL);
-            printf(" ==> %ld\n", sizeof(((char *)x)[0]));
-            char *slen = x;
-            char *tmp = (char *)x;
-            for (; *tmp; tmp++)
-                ;
-            return tmp - slen;
-        }
-        return 0;
+            c = getc(f);
+            strmcs[i] = c;
+            i++;
+        } while (c != EOF);
+        return strmcs;
     }
 
 #ifdef __cplusplus

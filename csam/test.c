@@ -1,6 +1,7 @@
 
 // #include "hexcvet.h"
 #include "c.h"
+#include <string.h>
 // #include "base64.h"
 
 // #include <stdio.h>
@@ -42,15 +43,22 @@ int main(int argc, char const *argv[])
         //     ch = getc(f);
         //     putchar(ch);
         // } while (ch != EOF);
-        fseek(f, 0, SEEK_END);
-        long flen = ftell(f);
-        printf("%ld\n", flen);
-        printf("%f\n", (float)flen / 1024);
-        printf("%ld\n", ptrlen("hello,world\n"));
-        int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
-        printf("%ld\n", ptrlen(a));
-        int b = 300;
-        printf("%ld\n", ptrlen(&b));
+        // fseek(f, 0, SEEK_END);
+        // long flen = ftell(f);
+        // printf("%ld\n", flen);
+        // printf("%f\n", (float)flen / 1024);
+        // printf("%ld\n", ptrlen("hello,world\n"));
+        // int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+        // printf("%ld\n", ptrlen(a));
+        // int b = 300;
+        // printf("%ld\n", ptrlen(&b));
+
+        // cotln();
+
+        // printf("%ld\n", strmlen(f));
+
+        // strmcs(f);
+        printf("%s\n", strmcs(f));
     }
     return 0;
 }
