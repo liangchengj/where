@@ -4,3 +4,4 @@ description: An app for Android beginners.
 dependencies:
   http: ^0.12.1
   json_serializable: ^3.3.0
+  ffi: ^0.1.3
