@@ -8,8 +8,8 @@
 
 // void print_int(int args, ...)
 // {
-//     va_list ap;         //va_list ÓÃÀ´±£´æ´«¸øº¯ÊıµÄÆäËû²ÎÊı¡£
-//     va_start(ap, args); //ËµÃ÷¿É±ä²ÎÊı´ÓÄÄÀï¿ªÊ¼
+//     va_list ap;         //va_list ç”¨æ¥ä¿å­˜ä¼ ç»™å‡½æ•°çš„å…¶ä»–å‚æ•°ã€‚
+//     va_start(ap, args); //è¯´æ˜å¯å˜å‚æ•°ä»å“ªé‡Œå¼€å§‹
 //     for (int i = 0; i < args; i++)
 //     {
 //         printf("argument: %s\n", va_arg(ap, char const *));
@@ -32,14 +32,14 @@ char *base64_encode(char *binData, char *base64, int binLength)
     for (i = 0; i < binLength; i += 3)
     {
 
-        //»ñÈ¡µÚÒ»¸ö6Î»
+        //è·å–ç¬¬ä¸€ä¸ª6ä½
         current = (*(binData + i) >> 2) & 0x3F;
         *(base64 + j++) = base64_alphabet[current];
 
-        //»ñÈ¡µÚ¶ş¸ö6Î»µÄÇ°Á½Î»
+        //è·å–ç¬¬äºŒä¸ª6ä½çš„å‰ä¸¤ä½
         current = (*(binData + i) << 4) & 0x30;
 
-        //Èç¹ûÖ»ÓĞÒ»¸ö×Ö·û£¬ÄÇÃ´ĞèÒª×öÌØÊâ´¦Àí
+        //å¦‚æœåªæœ‰ä¸€ä¸ªå­—ç¬¦ï¼Œé‚£ä¹ˆéœ€è¦åšç‰¹æ®Šå¤„ç†
         if (binLength <= (i + 1))
         {
             *(base64 + j++) = base64_alphabet[current];
@@ -48,10 +48,10 @@ char *base64_encode(char *binData, char *base64, int binLength)
             break;
         }
 
-        //»ñÈ¡µÚ¶ş¸ö6Î»µÄºóËÄÎ»
+        //è·å–ç¬¬äºŒä¸ª6ä½çš„åå››ä½
         current |= (*(binData + i + 1) >> 4) & 0xf;
         *(base64 + j++) = base64_alphabet[current];
-        //»ñÈ¡µÚÈı¸ö6Î»µÄÇ°ËÄÎ»
+        //è·å–ç¬¬ä¸‰ä¸ª6ä½çš„å‰å››ä½
         current = (*(binData + i + 1) << 2) & 0x3c;
         if (binLength <= (i + 2))
         {
@@ -60,11 +60,11 @@ char *base64_encode(char *binData, char *base64, int binLength)
             break;
         }
 
-        //»ñÈ¡µÚÈı¸ö6Î»µÄºóÁ½Î»
+        //è·å–ç¬¬ä¸‰ä¸ª6ä½çš„åä¸¤ä½
         current |= (*(binData + i + 2) >> 6) & 0x03;
         *(base64 + j++) = base64_alphabet[current];
 
-        //»ñÈ¡µÚËÄ¸ö6Î»
+        //è·å–ç¬¬å››ä¸ª6ä½
         current = *(binData + i + 2) & 0x3F;
         *(base64 + j++) = base64_alphabet[current];
     }

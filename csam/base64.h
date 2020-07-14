@@ -32,10 +32,11 @@ extern "C"
         'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
 
+    // hello
     void b64enc(char const *src, char *dst)
     {
-        char *const out = (char *)malloc(strlen(src) * 8 * sizeof(char));
-        printf("%sb\n", src);
+        size_t srclen = cslen(src);
+
     }
 
     void b64dec(char const *src, char *dst)

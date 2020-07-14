@@ -12,9 +12,10 @@ extern "C"
 #define hexcvet_h
 #endif
 
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// #include <stdio.h>
+#include "c.h"
 
     /* Color structure. */
     typedef struct
@@ -29,12 +30,14 @@ extern "C"
     int strhexint(char *hex);
 
     /* Convert explicit strings to hexadecimal strings. */
-    char *strhex(char const *src);
+    char *strhex(char *src);
 
     /* Parse the hexadecimal string into the corresponding explicit string. */
-    char *prshex(char const *hex);
+    char *prshex(char *hex);
     /* Parse the hexadecimal color string into the corresponding color structure. */
-    col *prscolhex(char const *hex);
+    col *prscolhex(char *hex);
+
+    char *urlenc(char *src);
 
     int chexint(char hex)
     {
@@ -58,9 +61,9 @@ extern "C"
         return chexint(hex[0]) * 16 /* radix */ + chexint(hex[1]);
     }
 
-    char *strhex(char const *src)
+    char *strhex(char *src)
     {
-        size_t srclen = strlen(src);
+        size_t srclen = cslen(src);
         size_t dstlen = (srclen * 2) * sizeof(char);
         char *dst = (char *)malloc(dstlen);
         for (size_t i = 0; i < srclen; i++)
@@ -79,9 +82,9 @@ extern "C"
         return dst;
     }
 
-    char *prshex(char const *hex)
+    char *prshex(char *hex)
     {
-        size_t hexlen = strlen(hex);
+        size_t hexlen = cslen(hex);
         char *ascii = (char *)malloc((hexlen / 2) * sizeof(char));
         for (size_t i = 0; i < hexlen; i += 2)
         {
@@ -91,12 +94,12 @@ extern "C"
         return ascii;
     }
 
-    col *prscolhex(char const *hex)
+    col *prscolhex(char *hex)
     {
         int count = 1;
         col *dst = (col *)malloc(sizeof(col));
         for (size_t i = hex[0] == '#' ? 1 : 0;
-             i < strlen(hex); i += 2)
+             i < cslen(hex); i += 2)
         {
             char sub[] = {hex[i], hex[i + 1]};
             int val = strhexint(sub);
@@ -121,6 +124,22 @@ extern "C"
                 break;
             }
             count++;
+        }
+        return dst;
+    }
+
+    char *urlenc(char *src)
+    {
+        src = strhex(src);
+        size_t srclen = cslen(src);
+        size_t dstlen = srclen + srclen / 2;
+        char *dst = (char *)malloc(dstlen * sizeof(char));
+        for (size_t i = 0; i < srclen; i += 2)
+        {
+            size_t j = i * 1.5;
+            dst[j] = '%';
+            dst[j + 1] = src[i];
+            dst[j + 2] = src[i + 1];
         }
         return dst;
     }

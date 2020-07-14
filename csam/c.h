@@ -20,6 +20,7 @@ extern "C"
 #define false 0
 #endif
 
+#include <stdio.h>
 #include <malloc.h>
 #include <assert.h>
 
@@ -27,8 +28,11 @@ extern "C"
 #define arrlen(x) sizeof(x) / sizeof(x[0])
 #endif
 
+#ifndef twarrlen
+#define twarrlen(x) sizeof(x) / sizeof(x[0][0])
+#endif
+
 #ifndef print
-#include <stdio.h>
 #define print(s) printf(s)
 #endif
 
@@ -37,6 +41,7 @@ extern "C"
 #endif
 
     size_t ptrlen(void *x);
+    size_t cslen(char *cs);
 
     void csup(char *src);
     void cslow(char *src);
@@ -58,6 +63,15 @@ extern "C"
         for (; *tmp; tmp++)
             ;
         return tmp - cpyptr;
+    }
+
+    size_t cslen(char *cs)
+    {
+        assert(cs != NULL);
+        size_t len = 0;
+        for (; cs[len] != '\0'; len++)
+            ;
+        return len;
     }
 
     void csup(char *src)

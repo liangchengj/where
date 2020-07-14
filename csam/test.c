@@ -1,8 +1,10 @@
 
 // #include "hexcvet.h"
-#include "c.h"
-#include <string.h>
+// #include "c.h"
+// #include <string.h>
 // #include "base64.h"
+// #include "mesty.h"
+#include "hexcvet.h"
 
 // #include <stdio.h>
 
@@ -32,7 +34,7 @@
 //     return 0;
 // }
 
-int main(int argc, char const *argv[])
+/* int main(int argc, char const *argv[])
 {
     FILE *f = fopen(__FILE__, "r");
     if (f != NULL)
@@ -60,5 +62,21 @@ int main(int argc, char const *argv[])
         // strmcs(f);
         printf("%s\n", strmcs(f));
     }
+    return 0;
+} */
+
+// int main(int argc, char const *argv[])
+// {
+//     printf("%s\n", (char *)mestyof("a.txt"));
+//     printf("%s\n", (char *)fextof("application/vnd.lotus-1-2-3"));
+//     return 0;
+// }
+
+int main(int argc, char const *argv[])
+{
+    // E98293E68DB7
+    printf("%s\n", strhex("C#敏捷开发实践"));
+    printf("%ld\n", cslen("hello"));
+    print("hello");
     return 0;
 }
