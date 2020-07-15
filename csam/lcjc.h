@@ -10,7 +10,9 @@ extern "C"
 
 #ifndef _LCJC_H
 #define _LCJC_H
-#endif
+#define arrlen(x) sizeof(x) / sizeof(x[0])
+#define twarrlen(x) sizeof(x) / sizeof(x[0][0])
+#endif /* _LCJC_H */
 
 #if !defined(_STDIO_H) && !defined(_INC_STDIO)
 #include <stdio.h>
@@ -26,24 +28,18 @@ extern "C"
 
 #ifndef _STDBOOL
 #include <stdbool.h>
-#endif
+#endif /* _STDBOOL */
 
 #if !defined(_STDINT_H) && !defined(_STDINT)
 #include <stdint.h>
-#endif
-
-#ifndef arrlen
-#define arrlen(x) sizeof(x) / sizeof(x[0])
-#endif
-
-#ifndef twarrlen
-#define twarrlen(x) sizeof(x) / sizeof(x[0][0])
-#endif
+#endif /* _STDINT_H  _STDINT */
 
     /* Allocate memory for a string of characters. */
     char *mlcstr(size_t len);
     /* Allocate memory for a string of unsigned characters. */
     uint8_t *mlcustr(size_t len);
+    /* Allocate memory for the file input byte stream. */
+    char *mlcstrm(size_t len);
 
     /* Get the length of the address pointed to by the pointer. */
     size_t ptrlen(void *x);
@@ -54,7 +50,11 @@ extern "C"
     void cslow(char *src);
     void cscrev(char *src);
 
+    void cscpy(char const *src, char *dst);
+
     char *strsub(char const *src, int start, int end);
+    void strepch(char *src, char const old, char const new);
+    void strepall(char *src, char const *old, char const *new);
 
     /* Get the length of the file input stream. */
     size_t strmlen(FILE *f);
@@ -63,15 +63,22 @@ extern "C"
 
     inline char *mlcstr(size_t len)
     {
-        char *dst = (char *)malloc(len * sizeof(char) + 1);
+        char *dst = (char *)malloc((len + 1) * sizeof(char));
         dst[len] = '\0';
         return dst;
     }
 
     inline uint8_t *mlcustr(size_t len)
     {
-        uint8_t *dst = (uint8_t *)malloc(len * sizeof(uint8_t) + 1);
+        uint8_t *dst = (uint8_t *)malloc((len + 1) * sizeof(uint8_t));
         dst[len] = '\0';
+        return dst;
+    }
+
+    inline char *mlcstrm(size_t len)
+    {
+        char *dst = (char *)malloc((len + 1) * sizeof(char));
+        dst[len] = EOF;
         return dst;
     }
 
@@ -80,7 +87,7 @@ extern "C"
         assert(x != NULL);
         // x :: len
         char *cpyptr = (char *)x;
-        char *tmp = (char *)x;
+        char *tmp = cpyptr;
         for (; *tmp; tmp++)
             ;
         return tmp - cpyptr;
@@ -122,10 +129,17 @@ extern "C"
     void cscrev(char *src)
     {
         assert(src != NULL);
-        for (size_t i = 0; i < ptrlen(src); i++)
-        {
-            src[i] ^= 32;
-        }
+        for (size_t i = 0; i < ptrlen(src); src[i] ^= 32,
+                    i++)
+            ;
+    }
+
+    void cscpy(char const *src, char *dst)
+    {
+        assert(src != NULL && dst != NULL);
+        for (size_t i = 0; i < cslen(src); dst[i] = src[i],
+                    i++)
+            ;
     }
 
     char *strsub(char const *src, int start, int end)
@@ -135,11 +149,28 @@ extern "C"
         // 0 1 2 3 4 5 6 7
         //  a b c d e f g
         char *dst = mlcstr(dstlen);
-        for (size_t i = 0; i < dstlen; i++)
-        {
-            dst[i] = src[start + i];
-        }
+        for (size_t i = 0; i < dstlen; dst[i] = src[start + i],
+                    i++)
+            ;
         return dst;
+    }
+
+    inline void strepch(char *src, char const old, char const new)
+    {
+        assert(src != NULL && &old != NULL && &new != NULL);
+        for (size_t i = 0; i < cslen(src); i++)
+        {
+            if (src[i] == old)
+            {
+                src[i] = new;
+            }
+        }
+    }
+
+    void strepall(char *src, char const *old, char const *new)
+    {
+        size_t oldlen = cslen(old);
+        char *dst = mlcstr(cslen(old));
     }
 
     inline size_t strmlen(FILE *f)
@@ -152,18 +183,19 @@ extern "C"
     char *strmcs(FILE *f)
     {
         assert(f != NULL);
+        // Define the function pointer.
         size_t (*callstrmlen)(FILE *) = strmlen;
+        // Use the function pointer to call the function.
         size_t strmlen = callstrmlen(f);
-        char *strmcs = (char *)malloc(strmlen);
+        // Allocate memory.
+        char *strmcs = mlcstrm(strmlen);
         fseek(f, 0, SEEK_SET);
-        size_t i = 0;
-        char c;
-        do
         {
-            c = getc(f);
-            strmcs[i] = c;
-            i++;
-        } while (c != EOF);
+            /* Perform the read file input byte stream operation. */
+            char c;
+            for (size_t i = 0, c; (c = getc(f)) != EOF; strmcs[i] = c, i++)
+                ;
+        }
         return strmcs;
     }
 

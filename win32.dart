@@ -29,6 +29,5 @@ void showMessageBox(String message, String caption) => win32MessageBox(
 // Simple example of calling [showMessageBox] from a command line; you can
 // alternatively make this call from a Flutter desktop app built for Windows.
 void main() {
-  showMessageBox('我是邓捷',
-      '看看'); // call just like any other Dart function
+  showMessageBox('我是邓捷', '看看'); // call just like any other Dart function
 }
