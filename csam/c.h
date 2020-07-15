@@ -32,40 +32,47 @@ extern "C"
 #define twarrlen(x) sizeof(x) / sizeof(x[0][0])
 #endif
 
-#ifndef print
-#define print(s) printf(s)
-#endif
-
-#if !defined(cotln) && defined(print)
-#define cotln() print("\n")
-#endif
+    char *mlcstr(size_t len);
+    unsigned char *mlcustr(size_t len);
 
     size_t ptrlen(void *x);
-    size_t cslen(char *cs);
+    size_t cslen(char const *cs);
 
     void csup(char *src);
     void cslow(char *src);
     void cscrev(char *src);
-
-    void cmvbts(char src, size_t lnum, size_t rnum);
 
     char *strsub(char const *src, int start, int end);
 
     size_t strmlen(FILE *f);
     char *strmcs(FILE *f);
 
+    char *mlcstr(size_t len)
+    {
+        char *dst = (char *)malloc(len * sizeof(char) + 1);
+        dst[len] = '\0';
+        return dst;
+    }
+
+    unsigned char *mlcustr(size_t len)
+    {
+        unsigned char *dst = (unsigned char *)malloc(len * sizeof(unsigned char) + 1);
+        dst[len] = '\0';
+        return dst;
+    }
+
     size_t ptrlen(void *x)
     {
         assert(x != NULL);
         // x :: len
-        char *cpyptr = x;
+        char *cpyptr = (char *)x;
         char *tmp = (char *)x;
         for (; *tmp; tmp++)
             ;
         return tmp - cpyptr;
     }
 
-    size_t cslen(char *cs)
+    size_t cslen(char const *cs)
     {
         assert(cs != NULL);
         size_t len = 0;
@@ -104,19 +111,6 @@ extern "C"
         for (size_t i = 0; i < ptrlen(src); i++)
         {
             src[i] ^= 32;
-        }
-    }
-
-    void cmvbts(char src, size_t lnum, size_t rnum)
-    {
-        assert(&src != NULL && &lnum != NULL && &rnum != NULL);
-        if (lnum != 0)
-        {
-            src <<= lnum;
-        }
-        if (rnum != 0)
-        {
-            src >>= rnum;
         }
     }
 

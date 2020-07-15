@@ -18,28 +18,42 @@ extern "C"
 #define base64_h
 #endif
 
-#include <stdint.h>
-#include <stdio.h>
 #include "c.h"
 
-    void b64enc(char const *src, char *dst);
-    void b64dec(char const *src, char *dst);
+    unsigned char *base64enc(unsigned char const *src);
+    char *base64dec(unsigned char const *src);
 
-    char b64_alphabet[] = {
-        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-        'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-        'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
-
-    // hello
-    void b64enc(char const *src, char *dst)
+    unsigned char *base64enc(unsigned char const *src)
     {
+        unsigned char const *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
         size_t srclen = cslen(src);
+        size_t rder = srclen % 3;
 
+        size_t dstlen = (srclen / 3 + (rder != 0 ? 1 : 0)) * 4;
+        unsigned char *dst = mlcustr(dstlen);
+        size_t srci, dsti;
+        for (srci = 0, dsti = 0; dsti < dstlen; srci += 3, dsti += 4)
+        {
+            dst[dsti] = alphabet[src[srci] >> 2];
+            dst[dsti + 1] = alphabet[(src[srci] & 0x3) << 4 | (src[srci + 1] >> 4)];
+            dst[dsti + 2] = alphabet[(src[srci + 1] & 0xf) << 2 | (src[srci + 2] >> 6)];
+            dst[dsti + 3] = alphabet[src[srci + 2] & 0x3f];
+        }
+
+        if (rder == 1)
+        {
+            dst[dsti - 2] = '=';
+        }
+
+        if (rder == 1 || rder == 2)
+        {
+            dst[dsti - 1] = '=';
+        }
+
+        return dst;
     }
 
-    void b64dec(char const *src, char *dst)
+    char *base64dec(unsigned char const *src)
     {
     }
 

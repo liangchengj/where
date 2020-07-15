@@ -14,7 +14,7 @@ extern "C"
 
 // #include <stdlib.h>
 // #include <string.h>
-// #include <stdio.h>
+#include <stdio.h>
 #include "c.h"
 
     /* Color structure. */
@@ -64,8 +64,8 @@ extern "C"
     char *strhex(char *src)
     {
         size_t srclen = cslen(src);
-        size_t dstlen = (srclen * 2) * sizeof(char);
-        char *dst = (char *)malloc(dstlen);
+        size_t dstlen = srclen * 2;
+        char *dst = mlcstr(dstlen);
         for (size_t i = 0; i < srclen; i++)
         {
             char hex[] = {'\0', '\0'};
@@ -85,7 +85,7 @@ extern "C"
     char *prshex(char *hex)
     {
         size_t hexlen = cslen(hex);
-        char *ascii = (char *)malloc((hexlen / 2) * sizeof(char));
+        char *ascii = mlcstr(hexlen / 2);
         for (size_t i = 0; i < hexlen; i += 2)
         {
             char sub[] = {hex[i], hex[i + 1]};
@@ -132,8 +132,7 @@ extern "C"
     {
         src = strhex(src);
         size_t srclen = cslen(src);
-        size_t dstlen = srclen + srclen / 2;
-        char *dst = (char *)malloc(dstlen * sizeof(char));
+        char *dst = mlcstr(srclen + srclen / 2);
         for (size_t i = 0; i < srclen; i += 2)
         {
             size_t j = i * 1.5;
