@@ -32,6 +32,7 @@ extern "C"
 
     uint8_t *__csb64(uint8_t const *src, bool isurl)
     {
+<<<<<<< HEAD
         uint8_t *_alphabet = mlcustr(64);
         cscpy(alphabet, _alphabet);
 
@@ -61,6 +62,24 @@ extern "C"
             strepch(dst, '-', '+');
             strepch(dst, '_', '/');
         }
+=======
+        uint8_t const *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+        size_t srclen = cslen(src);
+        size_t dstlen = (srclen / 3 + (srclen % 3 != 0 ? 1 : 0)) * 4;
+        uint8_t *dst = mlcustr(dstlen);
+        for (size_t srci = 0, dsti = 0; dsti < dstlen; srci += 3, dsti += 4)
+        {
+            size_t srci1 = srci + 1, srci2 = srci + 2;
+            dst[dsti] = alphabet[src[srci] >> 2];
+            dst[dsti + 1] = alphabet[(src[srci] & 0x3) << 4 | src[srci1] >> 4];
+            dst[dsti + 2] = src[srci1] != '\0' && srci1 != srclen
+                                ? alphabet[(src[srci1] & 0xf) << 2 | src[srci2] >> 6]
+                                : '=';
+            dst[dsti + 3] = src[srci2] != '\0' && srci2 != srclen + 1
+                                ? alphabet[src[srci2] & 0x3f]
+                                : '=';
+        }
+>>>>>>> a7a4ac47517a8b17eea4c6276c558a56c58cd9cb
         return dst;
     }
 
