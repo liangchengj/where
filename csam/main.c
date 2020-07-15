@@ -143,5 +143,4 @@ int main(int argc, char const *argv[])
     acolprnt(ANSI_FG_RED, msg);
     blackprnt(msg);
     redprnt(msg);
-    
 }

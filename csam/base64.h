@@ -3,8 +3,8 @@
  * 
  * 1> String to binary data stream.
  * 2> Every three 8-bit binary is converted into four 6-bit binary.
- * 3> 6-bit binary conversion Decimal.
- * 4> According to the decimal value from The Base64 Get characters from Alphabet table.
+ * 3> 6-bit binary conversion decimal.
+ * 4> According to the decimal value from the Base64 get characters from alphabet table.
  * 
  * @author Liangcheng Juves
  */
@@ -29,29 +29,20 @@ extern "C"
     {
         uint8_t const *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
         size_t srclen = cslen(src);
-        size_t rder = srclen % 3;
-
-        size_t dstlen = (srclen / 3 + (rder != 0 ? 1 : 0)) * 4;
+        size_t dstlen = (srclen / 3 + (srclen % 3 != 0 ? 1 : 0)) * 4;
         uint8_t *dst = mlcustr(dstlen);
-        size_t srci, dsti;
-        for (srci = 0, dsti = 0; dsti < dstlen; srci += 3, dsti += 4)
+        for (size_t srci = 0, dsti = 0; dsti < dstlen; srci += 3, dsti += 4)
         {
+            size_t srci1 = srci + 1, srci2 = srci + 2;
             dst[dsti] = alphabet[src[srci] >> 2];
-            dst[dsti + 1] = alphabet[(src[srci] & 0x3) << 4 | (src[srci + 1] >> 4)];
-            dst[dsti + 2] = alphabet[(src[srci + 1] & 0xf) << 2 | (src[srci + 2] >> 6)];
-            dst[dsti + 3] = alphabet[src[srci + 2] & 0x3f];
+            dst[dsti + 1] = alphabet[(src[srci] & 0x3) << 4 | src[srci1] >> 4];
+            dst[dsti + 2] = src[srci1] != '\0' && srci1 != srclen
+                                ? alphabet[(src[srci1] & 0xf) << 2 | src[srci2] >> 6]
+                                : '=';
+            dst[dsti + 3] = src[srci2] != '\0' && srci2 != srclen + 1
+                                ? alphabet[src[srci2] & 0x3f]
+                                : '=';
         }
-
-        if (rder == 1)
-        {
-            dst[dsti - 2] = '=';
-        }
-
-        if (rder == 1 || rder == 2)
-        {
-            dst[dsti - 1] = '=';
-        }
-
         return dst;
     }
 

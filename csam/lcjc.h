@@ -44,6 +44,8 @@ extern "C"
     char *mlcstr(size_t len);
     /* Allocate memory for a string of unsigned characters. */
     uint8_t *mlcustr(size_t len);
+    /* Allocate memory for the file input byte stream. */
+    char *mlcstrm(size_t len);
 
     /* Get the length of the address pointed to by the pointer. */
     size_t ptrlen(void *x);
@@ -63,15 +65,22 @@ extern "C"
 
     inline char *mlcstr(size_t len)
     {
-        char *dst = (char *)malloc(len * sizeof(char) + 1);
+        char *dst = (char *)malloc((len + 1) * sizeof(char));
         dst[len] = '\0';
         return dst;
     }
 
     inline uint8_t *mlcustr(size_t len)
     {
-        uint8_t *dst = (uint8_t *)malloc(len * sizeof(uint8_t) + 1);
+        uint8_t *dst = (uint8_t *)malloc((len + 1) * sizeof(uint8_t));
         dst[len] = '\0';
+        return dst;
+    }
+
+    inline char *mlcstrm(size_t len)
+    {
+        char *dst = (char *)malloc((len + 1) * sizeof(char));
+        dst[len] = EOF;
         return dst;
     }
 
@@ -80,7 +89,7 @@ extern "C"
         assert(x != NULL);
         // x :: len
         char *cpyptr = (char *)x;
-        char *tmp = (char *)x;
+        char *tmp = cpyptr;
         for (; *tmp; tmp++)
             ;
         return tmp - cpyptr;
@@ -152,18 +161,19 @@ extern "C"
     char *strmcs(FILE *f)
     {
         assert(f != NULL);
+        // Define the function pointer.
         size_t (*callstrmlen)(FILE *) = strmlen;
+        // Use the function pointer to call the function.
         size_t strmlen = callstrmlen(f);
-        char *strmcs = (char *)malloc(strmlen);
+        // Allocate memory.
+        char *strmcs = mlcstrm(strmlen);
         fseek(f, 0, SEEK_SET);
-        size_t i = 0;
-        char c;
-        do
         {
-            c = getc(f);
-            strmcs[i] = c;
-            i++;
-        } while (c != EOF);
+            /* Perform the read file input byte stream operation. */
+            char c;
+            for (size_t i = 0, c; (c = getc(f)) != EOF; strmcs[i] = c, i++)
+                ;
+        }
         return strmcs;
     }
 
