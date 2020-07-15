@@ -14,23 +14,25 @@ extern "C"
 {
 #endif
 
-#ifndef base64_h
-#define base64_h
+#ifndef _BASE64_H
+#define _BASE64_H
 #endif
 
-#include "c.h"
+#ifndef _LCJC_H
+#include "lcjc.h"
+#endif
 
-    unsigned char *base64enc(unsigned char const *src);
-    char *base64dec(unsigned char const *src);
+    uint8_t *base64enc(uint8_t const *src);
+    char *base64dec(uint8_t const *src);
 
-    unsigned char *base64enc(unsigned char const *src)
+    uint8_t *base64enc(uint8_t const *src)
     {
-        unsigned char const *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+        uint8_t const *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
         size_t srclen = cslen(src);
         size_t rder = srclen % 3;
 
         size_t dstlen = (srclen / 3 + (rder != 0 ? 1 : 0)) * 4;
-        unsigned char *dst = mlcustr(dstlen);
+        uint8_t *dst = mlcustr(dstlen);
         size_t srci, dsti;
         for (srci = 0, dsti = 0; dsti < dstlen; srci += 3, dsti += 4)
         {
@@ -53,7 +55,7 @@ extern "C"
         return dst;
     }
 
-    char *base64dec(unsigned char const *src)
+    char *base64dec(uint8_t const *src)
     {
     }
 

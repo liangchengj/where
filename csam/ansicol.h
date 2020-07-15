@@ -9,12 +9,15 @@ extern "C"
 {
 #endif
 
-#ifndef ansicol_h
-#define ansicol_h
+#ifndef _ANSICOL_H
+#define _ANSICOL_H
 #endif
 
 #include <string.h>
-#include "c.h"
+
+#ifndef _LCJC_H
+#include "lcjc.h"
+#endif
 
 /* Black text. */
 #define ANSI_FG_BLACK "\033[30m"
@@ -74,61 +77,62 @@ extern "C"
 #define ANSI_HIDE_CURSOR "\033[?25l"
 #define ANSI_SHOW_CURSOR "\033[?25h"
 
-    void acolprnt(char const *ansicol, char *str);
-    void blackprnt(char *str);
-    void redprnt(char *str);
-    void greenprnt(char *str);
-    void yellowprnt(char *str);
-    void blueprnt(char *str);
-    void fuchsiaprnt(char *str);
-    void cyanprnt(char *str);
-    void whiteprnt(char *str);
+    void acolprnt(char const *ansicol, char const *str);
+    void blackprnt(char const *str);
+    void redprnt(char const *str);
+    void greenprnt(char const *str);
+    void yellowprnt(char const *str);
+    void blueprnt(char const *str);
+    void fuchsiaprnt(char const *str);
+    void cyanprnt(char const *str);
+    void whiteprnt(char const *str);
 
-    inline void acolprnt(char const *ansicol, char *str)
+    inline void acolprnt(char const *ansicol, char const *str)
     {
-        char *toprnt = mlcstr(strlen(ansicol) + strlen(str));
+        assert(ansicol != NULL && str != NULL);
+        char *toprnt = mlcstr(cslen(ansicol) + cslen(str));
         strcpy(toprnt, ansicol);
         strcat(toprnt, str);
         strcat(toprnt, ANSI_NONE);
         printf("%s", toprnt);
     }
 
-    inline void blackprnt(char *str)
+    inline void blackprnt(char const *str)
     {
         acolprnt(ANSI_FG_BLACK, str);
     }
 
-    inline void redprnt(char *str)
+    inline void redprnt(char const *str)
     {
         acolprnt(ANSI_FG_RED, str);
     }
 
-    inline void greenprnt(char *str)
+    inline void greenprnt(char const *str)
     {
         acolprnt(ANSI_FG_GREEN, str);
     }
 
-    inline void yellowprnt(char *str)
+    inline void yellowprnt(char const *str)
     {
         acolprnt(ANSI_FG_YELLOW, str);
     }
 
-    inline void blueprnt(char *str)
+    inline void blueprnt(char const *str)
     {
         acolprnt(ANSI_FG_BLUE, str);
     }
 
-    inline void fuchsiaprnt(char *str)
+    inline void fuchsiaprnt(char const *str)
     {
         acolprnt(ANSI_FG_FUCHSIA, str);
     }
 
-    inline void cyanprnt(char *str)
+    inline void cyanprnt(char const *str)
     {
         acolprnt(ANSI_FG_CYAN, str);
     }
 
-    inline void whiteprnt(char *str)
+    inline void whiteprnt(char const *str)
     {
         acolprnt(ANSI_FG_WHITE, str);
     }

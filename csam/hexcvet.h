@@ -8,14 +8,17 @@ extern "C"
 {
 #endif
 
-#ifndef hexcvet_h
-#define hexcvet_h
+#ifndef _HEXCVET_H
+#define _HEXCVET_H
 #endif
 
 // #include <stdlib.h>
 // #include <string.h>
 #include <stdio.h>
-#include "c.h"
+
+#ifndef _LCJC_H
+#include "lcjc.h"
+#endif
 
     /* Color structure. */
     typedef struct

@@ -10,8 +10,8 @@ extern "C"
 {
 #endif
 
-#ifndef tcha_h
-#define tcha_h
+#ifndef _TCHA_H
+#define _TCHA_H
 #endif
 
 #include <jni.h>

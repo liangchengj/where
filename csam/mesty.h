@@ -9,14 +9,14 @@ extern "C"
 {
 #endif
 
-#ifndef mesty_h
-#define mesty_h
+#ifndef _MESTY_H
+#define _MESTY_H
 #endif
 
 #define MIME_MAPPING_LENGTH 1010
 
 #include <string.h>
-#include "c.h"
+#include <assert.h>
 
     char const *MIME_MAPPING[MIME_MAPPING_LENGTH][2] = {
         {"123", "application/vnd.lotus-1-2-3"},

@@ -8,21 +8,29 @@ extern "C"
 {
 #endif
 
-#ifndef c_h
-#define c_h
+#ifndef _LCJC_H
+#define _LCJC_H
 #endif
 
-#ifndef true
-#define true 1
-#endif
-
-#ifndef false
-#define false 0
-#endif
-
+#if !defined(_STDIO_H) && !defined(_INC_STDIO)
 #include <stdio.h>
+#endif
+
+#if !defined(_MALLOC_H) && !defined(_INC_MALLOC)
 #include <malloc.h>
+#endif
+
+#if !defined(_ASSERT_H)
 #include <assert.h>
+#endif
+
+#ifndef _STDBOOL
+#include <stdbool.h>
+#endif
+
+#if !defined(_STDINT_H) && !defined(_STDINT)
+#include <stdint.h>
+#endif
 
 #ifndef arrlen
 #define arrlen(x) sizeof(x) / sizeof(x[0])
@@ -32,10 +40,14 @@ extern "C"
 #define twarrlen(x) sizeof(x) / sizeof(x[0][0])
 #endif
 
+    /* Allocate memory for a string of characters. */
     char *mlcstr(size_t len);
-    unsigned char *mlcustr(size_t len);
+    /* Allocate memory for a string of unsigned characters. */
+    uint8_t *mlcustr(size_t len);
 
+    /* Get the length of the address pointed to by the pointer. */
     size_t ptrlen(void *x);
+    /* Get the length of the string. */
     size_t cslen(char const *cs);
 
     void csup(char *src);
@@ -44,19 +56,21 @@ extern "C"
 
     char *strsub(char const *src, int start, int end);
 
+    /* Get the length of the file input stream. */
     size_t strmlen(FILE *f);
+    /* Get the byte stream of the file input stream. */
     char *strmcs(FILE *f);
 
-    char *mlcstr(size_t len)
+    inline char *mlcstr(size_t len)
     {
         char *dst = (char *)malloc(len * sizeof(char) + 1);
         dst[len] = '\0';
         return dst;
     }
 
-    unsigned char *mlcustr(size_t len)
+    inline uint8_t *mlcustr(size_t len)
     {
-        unsigned char *dst = (unsigned char *)malloc(len * sizeof(unsigned char) + 1);
+        uint8_t *dst = (uint8_t *)malloc(len * sizeof(uint8_t) + 1);
         dst[len] = '\0';
         return dst;
     }
@@ -120,7 +134,7 @@ extern "C"
         size_t dstlen = end - start;
         // 0 1 2 3 4 5 6 7
         //  a b c d e f g
-        char *dst = (char *)malloc(dstlen * sizeof(char));
+        char *dst = mlcstr(dstlen);
         for (size_t i = 0; i < dstlen; i++)
         {
             dst[i] = src[start + i];
@@ -128,7 +142,7 @@ extern "C"
         return dst;
     }
 
-    size_t strmlen(FILE *f)
+    inline size_t strmlen(FILE *f)
     {
         assert(f != NULL);
         fseek(f, 0, SEEK_END);
