@@ -186,10 +186,14 @@
 
 int main(int argc, char const *argv[])
 {
+
     // strepch((char *)argv[1], '"', '\"');
-    argv[1]=""
+
     printf("%s\n", csb64(argv[1]));
     printf("%s\n", urlb64(argv[1]));
+
+    // printf("%s\n", base64enc(argv[1]));
+
     // printf("%s\n", (char *)mestyof(".txt"));
     // printf("%s\n", strhex(".txt"));
     // redprnt(base64enc("JSON在线编辑"));

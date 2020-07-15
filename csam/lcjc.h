@@ -193,7 +193,8 @@ extern "C"
         {
             /* Perform the read file input byte stream operation. */
             char c;
-            for (size_t i = 0, c; (c = getc(f)) != EOF; strmcs[i] = c, i++)
+            for (size_t i = 0, c; (c = getc(f)) != EOF; strmcs[i] = c,
+                        i++)
                 ;
         }
         return strmcs;

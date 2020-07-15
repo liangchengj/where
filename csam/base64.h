@@ -32,12 +32,13 @@ extern "C"
 
     uint8_t *__csb64(uint8_t const *src, bool isurl)
     {
+
         uint8_t *_alphabet = mlcustr(64);
         cscpy(alphabet, _alphabet);
 
         if (isurl)
         {
-            short _alphabetlen = cslen(_alphabet);
+            short _alphabetlen = cslen(alphabet);
             _alphabet[_alphabetlen - 2] = '-';
             _alphabet[_alphabetlen - 1] = '_';
         }
