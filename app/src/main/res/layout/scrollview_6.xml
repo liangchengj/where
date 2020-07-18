@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView_6"
+    style="@style/homeMainScrollview"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_f1"
+            android:layout_marginTop="@dimen/homeTopToolBarHeight"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                app:srcCompat="@drawable/zzz_64" />
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+                <TextView
+                    android:id="@+id/homeToNextTitle_F1"
+                    style="@style/homeListToolBarSimpleText"
+                    android:text="共享参数" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/show_code_64"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+
+        <!--待删除-->
+        <!--待删除-->
+        <!--待删除-->
+        <!--
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_f2"
+            style="@style/homeListToolBar">
+            <ImageView
+                style="@style/homeListLeftIcon"
+                app:srcCompat="@drawable/zzz_65" />
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+                <TextView
+                    android:id="@+id/homeToNextTitle_F2"
+                    style="@style/homeListToolBarSimpleText"
+                    android:text="内存" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/show_code_65"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_f3"
+            style="@style/homeListToolBar">
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_66" />
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+                <TextView
+                    android:id="@+id/homeToNextTitle_F3"
+                    style="@style/homeListToolBarSimpleText"
+                    android:text="外存" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/show_code_66"
+                style="@style/homeListNextButton"/>
+        </android.support.v7.widget.Toolbar>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_f4"
+            style="@style/homeListToolBar">
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_67" />
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+                <TextView
+                    android:id="@+id/homeToNextTitle_F4"
+                    style="@style/homeListToolBarSimpleText"
+                    android:text="外存公共目录" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/show_code_67"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_f5"
+            style="@style/homeListToolBar">
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_68" />
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+                <TextView
+                    android:id="@+id/homeToNextTitle_F5"
+                    style="@style/homeListToolBarSimpleText"
+                    android:text="缓存" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/show_code_68"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+        -->
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_f6"
+            style="@style/homeListToolBar">
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_69" />
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+                <TextView
+                    android:id="@+id/homeToNextTitle_F6"
+                    style="@style/homeListToolBarSimpleText"
+                    android:text="JSON解析" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/show_code_69"
+                style="@style/homeListNextButton"/>
+        </android.support.v7.widget.Toolbar>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_f7"
+            style="@style/homeListToolBar">
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_70" />
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+                <TextView
+                    android:id="@+id/homeToNextTitle_F7"
+                    style="@style/homeListToolBarSimpleText"
+                    android:text="XML解析" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/show_code_70"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_f8"
+            style="@style/homeListToolBar">
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_71" />
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+                <TextView
+                    android:id="@+id/homeToNextTitle_F8"
+                    style="@style/homeListToolBarSimpleText"
+                    android:text="添加SQLite数据" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/show_code_71"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_f9"
+            style="@style/homeListToolBar">
+
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_72" />
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+                <TextView
+                    android:id="@+id/homeToNextTitle_F9"
+                    style="@style/homeListToolBarSimpleText"
+                    android:text="删除SQLite数据" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/show_code_72"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_f10"
+            style="@style/homeListToolBar">
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_73" />
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+                <TextView
+                    android:id="@+id/homeToNextTitle_F10"
+                    style="@style/homeListToolBarSimpleText"
+                    android:text="更新SQLite数据" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/show_code_73"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_f11"
+            android:layout_marginBottom="@dimen/homeBottomHeight"
+            style="@style/homeListToolBar">
+            <ImageView
+                style="@style/homeListLeftIcon"
+                android:src="@drawable/zzz_74" />
+            <LinearLayout
+                style="@style/homeListToolBarLinearLayout">
+                <TextView
+                    android:id="@+id/homeToNextTitle_F11"
+                    style="@style/homeListToolBarSimpleText"
+                    android:text="读取SQLite数据" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/show_code_74"
+                style="@style/homeListNextButton" />
+        </android.support.v7.widget.Toolbar>
+
+    </LinearLayout>
+
+
+
+</ScrollView>

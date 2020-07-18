@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/homeSeeRe"
+        android:background="@color/blackShow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:scrollbarSize="4.5dp"
+        android:id="@+id/homeTopRightScrollShow"
+        android:visibility="gone"
+        android:background="@drawable/home_scrollview_top_right_bac"
+        android:scrollbarThumbVertical="@null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="110dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="26dp"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tool_1"
+                style="@style/homeScrollviewTopRightToolBar">
+
+                <ImageView
+                    android:id="@+id/i1"
+                    style="@style/homeScrollviewTopRightCheckIcon"/>
+
+
+                <TextView
+                    android:id="@+id/t1"
+                    style="@style/homeScrollviewTopRightTextView"/>
+
+            </android.support.v7.widget.Toolbar>
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tool_2"
+                style="@style/homeScrollviewTopRightToolBar">
+
+                <ImageView
+                    android:id="@+id/i2"
+                    style="@style/homeScrollviewTopRightCheckIcon"/>
+
+                <TextView
+                    android:id="@+id/t2"
+                    style="@style/homeScrollviewTopRightTextView"/>
+
+            </android.support.v7.widget.Toolbar>
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tool_3"
+                style="@style/homeScrollviewTopRightToolBar">
+
+                <ImageView
+                    android:id="@+id/i3"
+                    style="@style/homeScrollviewTopRightCheckIcon"/>
+
+                <TextView
+                    android:id="@+id/t3"
+                    style="@style/homeScrollviewTopRightTextView"/>
+
+            </android.support.v7.widget.Toolbar>
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tool_4"
+                style="@style/homeScrollviewTopRightToolBar">
+
+                <ImageView
+                    android:id="@+id/i4"
+                    style="@style/homeScrollviewTopRightCheckIcon"/>
+
+                <TextView
+                    android:id="@+id/t4"
+                    style="@style/homeScrollviewTopRightTextView"/>
+
+            </android.support.v7.widget.Toolbar>
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tool_5"
+                style="@style/homeScrollviewTopRightToolBar">
+
+                <ImageView
+                    android:id="@+id/i5"
+                    style="@style/homeScrollviewTopRightCheckIcon"/>
+
+                <TextView
+                    android:id="@+id/t5"
+                    style="@style/homeScrollviewTopRightTextView"/>
+            </android.support.v7.widget.Toolbar>
+
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tool_6"
+                style="@style/homeScrollviewTopRightToolBar">
+
+                <ImageView
+                    android:id="@+id/i6"
+                    style="@style/homeScrollviewTopRightCheckIcon"/>
+
+                <TextView
+                    android:id="@+id/t6"
+                    style="@style/homeScrollviewTopRightTextView"/>
+            </android.support.v7.widget.Toolbar>
+
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tool_7"
+                style="@style/homeScrollviewTopRightToolBar">
+
+                <ImageView
+                    android:id="@+id/i7"
+                    style="@style/homeScrollviewTopRightCheckIcon"/>
+
+                <TextView
+                    android:id="@+id/t7"
+                    style="@style/homeScrollviewTopRightTextView"/>
+
+            </android.support.v7.widget.Toolbar>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

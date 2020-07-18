@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="scrollView_button_text_size">24dp</dimen>
+    <dimen name="scrollView_button_height">64dp</dimen>
+    <dimen name="homeBottomHeight">24dp</dimen>
+
+    <dimen name="homeTopToolBarHeight">82dp</dimen>
+
+    <dimen name="homeMainNextButtonRightEdge">32dp</dimen>
+
+    <dimen name="homeMainNextButtonSize">27dp</dimen>
+
+    <dimen name="homeListTextLeftEdge">12dp</dimen>
+
+
+    <dimen name="homeListBigTextSize">18dp</dimen>
+
+    <dimen name="homeListSmallTextSize">14dp</dimen>
+
+    <dimen name="homeListSimpleTextSize">18dp</dimen>
+
+    <dimen name="homeScrollviewTopRightCheckIconSize">36dp</dimen>
+
+    <dimen name="homeScrollviewLeftEdge">12dp</dimen>
+
+
+    <dimen name="homeListLineRightEdge">84dp</dimen>
+    <dimen name="homeListIconLeftEdge">65dp</dimen>
+    <dimen name="homeListIconSize">32dp</dimen>
+
+    <dimen name="homeListToolBarHeight">76dp</dimen>
+
+    <dimen name="next_back_to_home_button_size">25dp</dimen>
+    <dimen name="next_back_to_home_button_edge">12dp</dimen>
+
+    <dimen name="nextTopToolBarHeight">50dp</dimen>
+
+    <dimen name="propertyTopLeftIconSize">35dp</dimen>
+
+    <dimen name="propertyTopTextLeftEdge">18dp</dimen>
+
+    <dimen name="propertyTopToolBarHeight">60dp</dimen>
+    <dimen name="propertyTopTextRightEdge">110dp</dimen>
+
+</resources>

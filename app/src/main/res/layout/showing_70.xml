@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/showing_include" />
+
+    <ScrollView
+        android:layout_below="@+id/codeTopToolbar"
+        android:scrollbarThumbVertical="@drawable/next_scrollview_bar_drawable"
+        android:scrollbarSize="5dp"
+        android:layout_above="@id/Button_On_XMLParsingExample"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/TextView_Left_On_XMLParsingExample"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:paddingLeft="10dp"
+                android:textSize="22dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/TextView_Right_On_XMLParsingExample"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:paddingLeft="10dp"
+                android:textSize="22dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/Button_On_XMLParsingExample"
+        android:text="Parse"
+        style="@style/showingOneTouchStyle"/>
+
+</RelativeLayout>

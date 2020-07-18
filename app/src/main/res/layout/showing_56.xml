@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/showing_include" />
+
+    <ImageView
+        android:id="@+id/ImageView_On_RotateAnimationExample"
+        android:layout_centerInParent="true"
+        android:src="@drawable/zzz_56"
+        android:layout_width="70dp"
+        android:layout_height="70dp" />
+
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/Button_Left_On_RotateAnimationExample"
+            android:text="Rotate Left"
+            style="@style/showingMoreTouchStyle"/>
+
+
+        <Button
+            android:id="@+id/Button_Right_On_RotateAnimationExample"
+            android:text="Rotate Right"
+            style="@style/showingMoreTouchStyle"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

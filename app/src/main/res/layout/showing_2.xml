@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include layout="@layout/showing_include" />
+
+    <EditText
+        android:gravity="center"
+        android:imeOptions="flagNoFullscreen|flagNoExtractUi"
+        android:id="@+id/EditText_On_EditTextExample"
+        android:textSize="58dp"
+        android:layout_centerInParent="true"
+        android:layout_width="380dp"
+        android:layout_height="120dp" />
+
+    <TextView
+        android:text="你可以在EditText中输入文本"
+        style="@style/showingTipTextStyle"/>
+
+
+</RelativeLayout>

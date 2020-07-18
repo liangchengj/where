@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/showing_include" />
+
+    <ScrollView
+        android:scrollbarThumbVertical="@drawable/next_scrollview_bar_drawable"
+        android:scrollbarSize="5dp"
+        android:layout_below="@+id/codeTopToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <EditText
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:hint="Id"
+                android:imeOptions="flagNoFullscreen"
+                android:textColor="@android:color/black"
+                android:paddingLeft="5dp"
+                android:id="@+id/EditText_Id_On_SQLiteUpdateExample"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:hint="Name"
+                android:imeOptions="flagNoFullscreen"
+                android:textColor="@android:color/black"
+                android:paddingLeft="5dp"
+                android:id="@+id/EditText_Name_On_SQLiteUpdateExample"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:hint="Sex"
+                android:imeOptions="flagNoFullscreen"
+                android:textColor="@android:color/black"
+                android:paddingLeft="5dp"
+                android:id="@+id/EditText_Sex_On_SQLiteUpdateExample"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:hint="Hobbies"
+                android:imeOptions="flagNoFullscreen"
+                android:textColor="@android:color/black"
+                android:paddingLeft="5dp"
+                android:id="@+id/EditText_Hobbies_On_SQLiteUpdateExample"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <Button
+                android:text="Update"
+                android:id="@+id/Button_On_SQLiteUpdateExample"
+                style="@style/showingSQLiteTouchStyle"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

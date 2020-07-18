@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/showing_include" />
+
+
+    <ScrollView
+        android:scrollbarThumbVertical="@drawable/next_scrollview_bar_drawable"
+        android:scrollbarSize="5dp"
+        android:layout_below="@+id/codeTopToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_margin="40dp"
+                android:textSize="18dp"
+                android:id="@+id/TextView_On_SQLiteReadExample"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:text="Read"
+        android:id="@+id/Button_On_SQLiteReadExample"
+        style="@style/showingOneTouchStyle"/>
+
+
+</RelativeLayout>
