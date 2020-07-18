@@ -1,0 +1,6 @@
+name: where
+description: An app for Android beginners.
+
+dependencies:
+  http: ^0.12.1
+  json_serializable: ^3.3.0
