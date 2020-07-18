@@ -32,11 +32,7 @@ extern "C"
 
     uint8_t *__csb64(uint8_t const *src, bool isurl)
     {
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
->>>>>>> b29ce38804911ecb08b911844a529d52ba6e0288
         uint8_t *_alphabet = mlcustr(64);
         cscpy(alphabet, _alphabet);
 
@@ -66,9 +62,6 @@ extern "C"
             strepch(dst, '-', '+');
             strepch(dst, '_', '/');
         }
-<<<<<<< HEAD
-=======
-=======
         uint8_t const *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
         size_t srclen = cslen(src);
         size_t dstlen = (srclen / 3 + (srclen % 3 != 0 ? 1 : 0)) * 4;
@@ -85,8 +78,7 @@ extern "C"
                                 ? alphabet[src[srci2] & 0x3f]
                                 : '=';
         }
->>>>>>> a7a4ac47517a8b17eea4c6276c558a56c58cd9cb
->>>>>>> b29ce38804911ecb08b911844a529d52ba6e0288
+
         return dst;
     }
 
