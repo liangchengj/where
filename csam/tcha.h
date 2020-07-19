@@ -23,8 +23,7 @@ extern "C"
 
     void jnienvof(JNIEnv *env, jobject thiz)
     {
-        __jnienv = env;
-        jclz_this = (jclass)(__jnienv)->GetObjectClass(env, thiz);
+       
     }
 
 #ifdef __cplusplus

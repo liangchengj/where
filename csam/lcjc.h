@@ -60,6 +60,8 @@ extern "C"
     void strepch(char *src, char const old, char const new);
     void strepall(char *src, char const *old, char const *new);
 
+    uint8_t *strbool(uint8_t var);
+
     /* Get the length of the file input stream. */
     size_t strmlen(FILE *f);
     /* Get the byte stream of the file input stream. */
@@ -202,6 +204,13 @@ extern "C"
                 ;
         }
         return strmcs;
+    }
+
+    inline uint8_t *strbool(uint8_t var)
+    {
+        return var == 0 || var == 1
+                   ? var == 1 ? "true" : "false"
+                   : "error";
     }
 
 #ifdef __cplusplus

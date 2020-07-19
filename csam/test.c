@@ -186,17 +186,22 @@
 
 #include <stdio.h>
 #include "lcjc.h"
+#include "platf.h"
 
+#ifdef __PLATF_WINDOWS
 int main(int argc, char const *argv[])
 {
 
     printf("%s\n", __DATE__);
     printf("%s\n", __TIME__);
 
-    forever
+    printf("%s\n", strbool(1));
+
+    /* forever
     {
         printf("%s\n", "test");
-    }
+    } */
 
     return 0;
 }
+#endif
