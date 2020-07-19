@@ -34,6 +34,10 @@ extern "C"
 #include <stdint.h>
 #endif /* _STDINT_H  _STDINT */
 
+#ifndef forever
+#define forever for (;;)
+#endif
+
     /* Allocate memory for a string of characters. */
     char *mlcstr(size_t len);
     /* Allocate memory for a string of unsigned characters. */

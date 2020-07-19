@@ -185,37 +185,18 @@
 // #include "hexcvet.h"
 
 #include <stdio.h>
+#include "lcjc.h"
 
 int main(int argc, char const *argv[])
 {
 
-    // <<<<<<< HEAD
-
-    // =======
-    // <<<<<<< HEAD
-    // >>>>>>> b29ce38804911ecb08b911844a529d52ba6e0288
-    //     // strepch((char *)argv[1], '"', '\"');
-
-    //     printf("%s\n", csb64(argv[1]));
-    //     printf("%s\n", urlb64(argv[1]));
-    // <<<<<<< HEAD
-
-    // printf("%s\n", base64enc(argv[1]));
-
-    // =======
-    // =======
-    //     printf("%s\n", base64enc(argv[1]));
-    // >>>>>>> a7a4ac47517a8b17eea4c6276c558a56c58cd9cb
-    // >>>>>>> b29ce38804911ecb08b911844a529d52ba6e0288
-    // printf("%s\n", (char *)mestyof(".txt"));
-    // printf("%s\n", strhex(".txt"));
-    // redprnt(base64enc("JSON在线编辑"));
-    // printf("%s\n", base64_encode("JSON在线编辑"));
-    // printf("%s\n", "===================================>");
-    // printf("%s\n", strmcs(fopen(__FILE__, "r")));
-
     printf("%s\n", __DATE__);
     printf("%s\n", __TIME__);
+
+    forever
+    {
+        printf("%s\n", "test");
+    }
 
     return 0;
 }
