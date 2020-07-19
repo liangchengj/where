@@ -179,26 +179,28 @@
 
 // #include <stdio.h>
 
-// #include "base64.h"
+#include "base64.h"
 // #include "ansicol.h"
 // #include "mesty.h"
 // #include "hexcvet.h"
 
 #include <stdio.h>
-#include "lcjc.h"
+// #include "lcjc.h"
 #include "platf.h"
 
-#ifdef __PLATF_WINDOWS
+// #ifdef __PLATF_WINDOWS
 int main(int argc, char const *argv[])
 {
 
-    printf("%s\n", __DATE__);
-    printf("%s\n", __TIME__);
+    // printf("%s\n", __DATE__);
+    // printf("%s\n", __TIME__);
 
-    printf("%s\n", strbool(1));
+    // printf("%s\n", strbool(1));
 
-    printf("%s\n", strbool(__32bits));
-    printf("%s\n", strbool(__64bits));
+    // printf("%s\n", strbool(__32bits));
+    // printf("%s\n", strbool(__64bits));
+
+    printf("%s\n", fb64("help-doc.html"));
 
     /* forever
     {
@@ -207,4 +209,5 @@ int main(int argc, char const *argv[])
 
     return 0;
 }
-#endif
+
+// #endif
