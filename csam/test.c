@@ -197,6 +197,9 @@ int main(int argc, char const *argv[])
 
     printf("%s\n", strbool(1));
 
+    printf("%s\n", strbool(__32bits));
+    printf("%s\n", strbool(__64bits));
+
     /* forever
     {
         printf("%s\n", "test");
