@@ -71,8 +71,9 @@ extern "C"
 
 #define ANSI_HIDE_CURSOR "\033[?25l"
 #define ANSI_SHOW_CURSOR "\033[?25h"
+#define ANSI_NULL "\0"
 
-    void acolprnt(char const *ansicol, char const *str);
+    void acolprnt(char const *bg, char const *fore, char const *str);
     void blackprnt(char const *str);
     void redprnt(char const *str);
     void greenprnt(char const *str);
@@ -82,11 +83,12 @@ extern "C"
     void cyanprnt(char const *str);
     void whiteprnt(char const *str);
 
-    inline void acolprnt(char const *ansicol, char const *str)
+    inline void acolprnt(char const *bg, char const *fore, char const *str)
     {
-        assert(ansicol != NULL && str != NULL);
-        char *toprnt = mlcstr(cslen(ansicol) + cslen(str));
-        strcpy(toprnt, ansicol);
+        assert(NULL != bg && NULL != fore && NULL != str);
+        char *toprnt = mlcstr(cslen(bg) + cslen(fore) + cslen(str));
+        strcpy(toprnt, bg);
+        strcat(toprnt, fore);
         strcat(toprnt, str);
         strcat(toprnt, ANSI_NONE);
         printf("%s", toprnt);
@@ -94,42 +96,50 @@ extern "C"
 
     inline void blackprnt(char const *str)
     {
-        acolprnt(ANSI_FG_BLACK, str);
+        assert(NULL != str);
+        acolprnt(NULL, ANSI_FG_BLACK, str);
     }
 
     inline void redprnt(char const *str)
     {
-        acolprnt(ANSI_FG_RED, str);
+        assert(NULL != str);
+        acolprnt(NULL, ANSI_FG_RED, str);
     }
 
     inline void greenprnt(char const *str)
     {
-        acolprnt(ANSI_FG_GREEN, str);
+        assert(NULL != str);
+        acolprnt(NULL, ANSI_FG_GREEN, str);
     }
 
     inline void yellowprnt(char const *str)
     {
-        acolprnt(ANSI_FG_YELLOW, str);
+        assert(NULL != str);
+        acolprnt(NULL, ANSI_FG_YELLOW, str);
     }
 
     inline void blueprnt(char const *str)
     {
-        acolprnt(ANSI_FG_BLUE, str);
+        assert(NULL != str);
+        acolprnt(NULL, ANSI_FG_BLUE, str);
     }
 
     inline void fuchsiaprnt(char const *str)
     {
-        acolprnt(ANSI_FG_FUCHSIA, str);
+        assert(NULL != str);
+        acolprnt(NULL, ANSI_FG_FUCHSIA, str);
     }
 
     inline void cyanprnt(char const *str)
     {
-        acolprnt(ANSI_FG_CYAN, str);
+        assert(NULL != str);
+        acolprnt(NULL, ANSI_FG_CYAN, str);
     }
 
     inline void whiteprnt(char const *str)
     {
-        acolprnt(ANSI_FG_WHITE, str);
+        assert(NULL != str);
+        acolprnt(NULL, ANSI_FG_WHITE, str);
     }
 
 #ifdef __cplusplus

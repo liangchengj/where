@@ -83,7 +83,7 @@ extern "C"
 
     size_t ptrlen(void *x)
     {
-        assert(x != NULL);
+        assert(NULL != x);
         // x :: len
         char *cpyptr = (char *)x;
         char *tmp = cpyptr;
@@ -94,7 +94,7 @@ extern "C"
 
     size_t cslen(char const *cs)
     {
-        assert(cs != NULL);
+        assert(NULL != cs);
         size_t len = 0;
         for (; cs[len] != '\0'; len++)
             ;
@@ -103,7 +103,7 @@ extern "C"
 
     void csup(char *src)
     {
-        assert(src != NULL);
+        assert(NULL != src);
         for (size_t i = 0; i < ptrlen(src); i++)
         {
             if (src[i] >= 'a' && src[i] <= 'z')
@@ -115,7 +115,7 @@ extern "C"
 
     void cslow(char *src)
     {
-        assert(src != NULL);
+        assert(NULL != src);
         for (size_t i = 0; i < ptrlen(src); i++)
         {
             if (src[i] >= 'A' && src[i] <= 'Z')
@@ -127,7 +127,7 @@ extern "C"
 
     void cscrev(char *src)
     {
-        assert(src != NULL);
+        assert(NULL != src);
         for (size_t i = 0; i < ptrlen(src); src[i] ^= 32,
                     i++)
             ;
@@ -135,7 +135,7 @@ extern "C"
 
     void cscpy(char const *src, char *dst)
     {
-        assert(src != NULL && dst != NULL);
+        assert(NULL != src && NULL != dst);
         for (size_t i = 0; i < cslen(src); dst[i] = src[i],
                     i++)
             ;
@@ -143,7 +143,7 @@ extern "C"
 
     char *strsub(char const *src, int start, int end)
     {
-        assert(src != NULL && &start != NULL && &end != NULL);
+        assert(NULL != src && NULL != &start && NULL != &end);
         size_t dstlen = end - start;
         // 0 1 2 3 4 5 6 7
         //  a b c d e f g
@@ -156,7 +156,7 @@ extern "C"
 
     inline void strepch(char *src, char const old, char const new)
     {
-        assert(src != NULL && &old != NULL && &new != NULL);
+        assert(NULL != src && NULL != &old && NULL != &new);
         for (size_t i = 0; i < cslen(src); i++)
         {
             if (src[i] == old)
@@ -174,14 +174,14 @@ extern "C"
 
     inline size_t strmlen(FILE *f)
     {
-        assert(f != NULL);
+        assert(NULL != f);
         fseek(f, 0, SEEK_END);
         return ftell(f);
     }
 
     char *strmcs(FILE *f)
     {
-        assert(f != NULL);
+        assert(NULL != f);
         // Define the function pointer.
         size_t (*callstrmlen)(FILE *) = strmlen;
         // Use the function pointer to call the function.
@@ -196,6 +196,7 @@ extern "C"
                         i++)
                 ;
         }
+        fclose(f);
         return strmcs;
     }
 

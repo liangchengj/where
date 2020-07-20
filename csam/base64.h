@@ -23,9 +23,9 @@ extern "C"
 
     uint8_t *__csb64(uint8_t const *src, bool isurl);
     uint8_t *csb64(uint8_t const *src);
-    uint8_t *mimeb64(uint8_t const *src, char const *filename);
-    uint8_t *fb64(char const *fpath);
     uint8_t *urlb64(uint8_t const *src);
+    uint8_t *mimeb64(uint8_t const *src, void *fname);
+    uint8_t *fb64(void *fpath);
 
     char *__b64cs(uint8_t const *src);
 
@@ -56,11 +56,21 @@ extern "C"
             dst[dsti + 3] = src[srci2] != '\0' && srci2 != srclen + 1
                                 ? _alphabet[src[srci2] & 0x3f]
                                 : '=';
-        }
-        if (isurl)
-        {
-            strepch(dst, '-', '+');
-            strepch(dst, '_', '/');
+
+            if (isurl)
+            {
+                dst[dsti] = dst[dsti] == '-' ? '+' : dst[dsti];
+                dst[dsti] = dst[dsti] == '_' ? '/' : dst[dsti];
+
+                dst[dsti + 1] = dst[dsti + 1] == '-' ? '+' : dst[dsti + 1];
+                dst[dsti + 1] = dst[dsti + 1] == '_' ? '/' : dst[dsti + 1];
+
+                dst[dsti + 2] = dst[dsti + 2] == '-' ? '+' : dst[dsti + 2];
+                dst[dsti + 2] = dst[dsti + 2] == '_' ? '/' : dst[dsti + 2];
+
+                dst[dsti + 3] = dst[dsti + 3] == '-' ? '+' : dst[dsti + 3];
+                dst[dsti + 3] = dst[dsti + 3] == '_' ? '/' : dst[dsti + 3];
+            }
         }
 
         free(_alphabet);
@@ -72,19 +82,24 @@ extern "C"
         __csb64(src, false);
     }
 
-    uint8_t *mimeb64(uint8_t const *src, char const *fname)
+    inline uint8_t *urlb64(uint8_t const *src)
     {
-        char *const begin = "data:";
-        char *mesty = mestyof(fname);
-        char *withmes = ";base64,";
-        char *end = csb64(src);
+        __csb64(src, true);
+    }
+
+    uint8_t *mimeb64(uint8_t const *src, void *fname)
+    {
+        uint8_t *const begin = "data:";
+        uint8_t *mesty = mestyof(fname);
+        uint8_t *withmes = ";base64,";
+        uint8_t *end = urlb64(src);
 
         size_t beginlen = cslen(begin);
         size_t mestylen = cslen(mesty);
         size_t withmeslen = cslen(withmes);
         size_t endlen = cslen(end);
 
-        char *dst = mlcstr(beginlen + mestylen + endlen);
+        uint8_t *dst = mlcustr(beginlen + mestylen + endlen);
         for (size_t i = 0; i < beginlen; i++)
         {
             dst[i] = begin[i];
@@ -106,14 +121,9 @@ extern "C"
         return dst;
     }
 
-    uint8_t *fb64(char const *fpath)
+    uint8_t *fb64(void *fpath)
     {
-        return mimeb64(strmcs(fopen(fpath, "r")), fpath);
-    }
-
-    inline uint8_t *urlb64(uint8_t const *src)
-    {
-        __csb64(src, true);
+        return mimeb64(strmcs(fopen(fpath, "rb")), fpath);
     }
 
     char *__b64cs(uint8_t const *src)

@@ -11,7 +11,7 @@
 // #ifdef __cpluscplus
 extern "C"
 {
-// #endif
+    // #endif
 
 #include "jni/jni.h"
     JNIEnv *tcha_env;
@@ -30,23 +30,24 @@ extern "C"
 
     jstring cstr_jstr(char const *cs)
     {
-        return (*tcha_env)->Ne
+        // return (*tcha_env)->NewStringUTF(tcha_env, cs);
+        // return tcha_env->NewStringUTF(tcha_env,cs);
     }
 #elif defined(_JAVASOFT_JNI_H_) /* New */
 
-jstring cstr_jstr(char const *cs)
-{
-    return tcha_env->NewStringUTF(cs);
-}
+    jstring cstr_jstr(char const *cs)
+    {
+        return tcha_env->NewStringUTF(cs);
+    }
 
-char const *jstr_cstr(jstring jstr)
-{
-    return tcha_env->GetStringUTFChars(jstr, JNI_FALSE);
-}
+    char const *jstr_cstr(jstring jstr)
+    {
+        return tcha_env->GetStringUTFChars(jstr, JNI_FALSE);
+    }
 
 #endif /* JNI_H_ */
 
-// #ifdef __cpluscplus
+    // #ifdef __cpluscplus
 }
 // #endif
 

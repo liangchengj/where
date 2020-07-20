@@ -1030,7 +1030,7 @@ extern "C"
 
     void *mestyof(void *strifext)
     {
-        assert(strifext != NULL);
+        assert(NULL != strifext);
         char *cpy = (char *)strifext;
         cpy = strrchr(cpy, '.');
         cpy = strtok(cpy, ".");
@@ -1046,7 +1046,7 @@ extern "C"
 
     void *fextof(void *mesty)
     {
-        assert(mesty != NULL);
+        assert(NULL != mesty);
         for (size_t i = 0; i < MIME_MAPPING_LENGTH; i++)
         {
             if (!strcmp(MIME_MAPPING[i][1], (char *)mesty))

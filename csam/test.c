@@ -180,13 +180,13 @@
 // #include <stdio.h>
 
 #include "base64.h"
-// #include "ansicol.h"
-// #include "mesty.h"
+#include "ansicol.h"
+#include "mesty.h"
 // #include "hexcvet.h"
 
 // #include <stdio.h>
 #include "lcjc.h"
-// #include "platf.h"
+#include "platf.h"
 
 // #ifdef __PLATF_WINDOWS
 int main(int argc, char const *argv[])
@@ -197,8 +197,8 @@ int main(int argc, char const *argv[])
 
     // printf("%s\n", strbool(1));
 
-    // printf("%s\n", strbool(__32bits));
-    // printf("%s\n", strbool(__64bits));
+    printf("%s\n", strbool(__32bits));
+    printf("%s\n", strbool(__64bits));
 
     // printf("%s\n", fb64("help-doc.html"));
 
@@ -209,9 +209,9 @@ int main(int argc, char const *argv[])
 
     // redprnt(csb64("hello,world"));
 
-    printf("%s\n", csb64(argv[1]));
+    printf("%s\n", urlb64("https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0Private%E6%96%B9%E6%B3%95&oq=dlltool%25E7%259A%2584%25E4%25BD%25BF%25E7%2594%25A8&rsv_pq=8b338dd100121db4&rsv_t=be67QHTUpIaFE5RNhRBACKGmCySarGdjNjV%2Bvp5bf5qRv5bonOb%2BzLiMYgE&rqlang=cn&rsv_enter=1&rsv_dl=tb&rsv_btype=t&inputT=9848&rsv_sug3=201&rsv_sug1=105&rsv_sug7=100&rsv_sug2=0&rsv_sug4=9848"));
 
-    print("hello");
+    // print("hello");
 
     return 0;
 }
