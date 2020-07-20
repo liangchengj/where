@@ -3,40 +3,30 @@
  * 
  * @author Liangcheng Juves
  */
+#ifndef _LCJC_H
+#define _LCJC_H
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-#ifndef _LCJC_H
-#define _LCJC_H
-#define arrlen(x) sizeof(x) / sizeof(x[0])
-#define twarrlen(x) sizeof(x) / sizeof(x[0][0])
-#endif /* _LCJC_H */
-
-#if !defined(_STDIO_H) && !defined(_INC_STDIO)
 #include <stdio.h>
-#endif
-
-#if !defined(_MALLOC_H) && !defined(_INC_MALLOC)
 #include <malloc.h>
-#endif
-
-#if !defined(_ASSERT_H)
 #include <assert.h>
-#endif
-
-#ifndef _STDBOOL
-#include <stdbool.h>
-#endif /* _STDBOOL */
-
-#if !defined(_STDINT_H) && !defined(_STDINT)
 #include <stdint.h>
-#endif /* _STDINT_H  _STDINT */
+#include <stdbool.h>
 
-#ifndef forever
+#define arrlen(x) sizeof(x) / sizeof(x[0])
+#define tarrlen(x) sizeof(x) / sizeof(x[0][0])
 #define forever for (;;)
-#endif
+
+#ifndef print
+#define print(x) printf("%s", x)
+#endif /* print */
+#ifndef println
+#define println printf("%s\n", x)
+#endif /* println */
 
     /* Allocate memory for a string of characters. */
     char *mlcstr(size_t len);
@@ -50,8 +40,11 @@ extern "C"
     /* Get the length of the string. */
     size_t cslen(char const *cs);
 
+    /* Convert lowercase in the string to uppercase. */
     void csup(char *src);
+    /* Convert uppercase in the string to lowercase. */
     void cslow(char *src);
+    /* Reverse the case of the letters in the string. */
     void cscrev(char *src);
 
     void cscpy(char const *src, char *dst);
@@ -216,3 +209,5 @@ extern "C"
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* _LCJC_H */

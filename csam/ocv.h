@@ -3,18 +3,15 @@
  * 
  * @author Liangcheng Juves
  */
+#ifndef _OCV_H
+#define _OCV_H
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-#ifndef _OCV_H
-#define _OCV_H
-#endif
-
-#ifndef _PLATF_H
 #include "platf.h"
-#endif
 
 #ifdef __PLATF_WINDOWS
 #ifndef __OCV_DEBUG__
@@ -27,3 +24,5 @@ extern "C"
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* _OCV_H */

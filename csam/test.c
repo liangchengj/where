@@ -184,9 +184,9 @@
 // #include "mesty.h"
 // #include "hexcvet.h"
 
-#include <stdio.h>
-// #include "lcjc.h"
-#include "platf.h"
+// #include <stdio.h>
+#include "lcjc.h"
+// #include "platf.h"
 
 // #ifdef __PLATF_WINDOWS
 int main(int argc, char const *argv[])
@@ -200,12 +200,18 @@ int main(int argc, char const *argv[])
     // printf("%s\n", strbool(__32bits));
     // printf("%s\n", strbool(__64bits));
 
-    printf("%s\n", fb64("help-doc.html"));
+    // printf("%s\n", fb64("help-doc.html"));
 
     /* forever
     {
         printf("%s\n", "test");
     } */
+
+    // redprnt(csb64("hello,world"));
+
+    printf("%s\n", csb64(argv[1]));
+
+    print("hello");
 
     return 0;
 }

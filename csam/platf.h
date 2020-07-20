@@ -3,13 +3,12 @@
  * 
  * @author Liangcheng Juves
  */
+#ifndef _PLATF_H
+#define _PLATF_H
+
 #ifdef __cplusplus
 extern "C"
 {
-#endif
-
-#ifndef _PLATF_H
-#define _PLATF_H
 #endif
 
 #if defined(_AIX) || defined(__TOS_AIX__)
@@ -286,3 +285,5 @@ extern "C"
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* _PLATF_H */

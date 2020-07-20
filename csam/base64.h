@@ -8,23 +8,16 @@
  * 
  * @author Liangcheng Juves
  */
+#ifndef _BASE64_H
+#define _BASE64_H
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-#ifndef _BASE64_H
-#define _BASE64_H
-#endif
-
-#ifndef _LCJC_H
 #include "lcjc.h"
-#endif
-
-#ifndef _MESTY_H
 #include "mesty.h"
-#endif
 
     uint8_t const *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
@@ -51,6 +44,7 @@ extern "C"
         size_t srclen = cslen(src);
         size_t dstlen = (srclen / 3 + (srclen % 3 != 0 ? 1 : 0)) * 4;
         uint8_t *dst = mlcustr(dstlen);
+
         for (size_t srci = 0, dsti = 0; dsti < dstlen; srci += 3, dsti += 4)
         {
             size_t srci1 = srci + 1, srci2 = srci + 2;
@@ -69,6 +63,7 @@ extern "C"
             strepch(dst, '_', '/');
         }
 
+        free(_alphabet);
         return dst;
     }
 
@@ -77,10 +72,10 @@ extern "C"
         __csb64(src, false);
     }
 
-    uint8_t *mimeb64(uint8_t const *src, char const *filename)
+    uint8_t *mimeb64(uint8_t const *src, char const *fname)
     {
         char *const begin = "data:";
-        char *mesty = mestyof(filename);
+        char *mesty = mestyof(fname);
         char *withmes = ";base64,";
         char *end = csb64(src);
 
@@ -133,3 +128,5 @@ extern "C"
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* _BASE64_H */

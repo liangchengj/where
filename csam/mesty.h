@@ -3,14 +3,12 @@
  * 
  * @author Liangcheng Juves
  */
+#ifndef _MESTY_H
+#define _MESTY_H
 
 #ifdef __cplusplus
 extern "C"
 {
-#endif
-
-#ifndef _MESTY_H
-#define _MESTY_H
 #endif
 
 #define MIME_MAPPING_LENGTH 1010
@@ -1062,3 +1060,5 @@ extern "C"
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* _MESTY_H */

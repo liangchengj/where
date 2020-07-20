@@ -3,22 +3,15 @@
  * 
  * @author Liangcheng Juves
  */
+#ifndef _HEXCVET_H
+#define _HEXCVET_H
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-#ifndef _HEXCVET_H
-#define _HEXCVET_H
-#endif
-
-// #include <stdlib.h>
-// #include <string.h>
-#include <stdio.h>
-
-#ifndef _LCJC_H
 #include "lcjc.h"
-#endif
 
     /* Color structure. */
     typedef struct
@@ -27,6 +20,7 @@ extern "C"
         int g;
         int b;
     } col;
+
     /* Parse hexadecimal characters into corresponding int values. */
     int chexint(char hex);
     /* Parse the hexadecimal string into the corresponding int value. */
@@ -59,7 +53,7 @@ extern "C"
         return -1;
     }
 
-    int strhexint(char *hex)
+    inline int strhexint(char *hex)
     {
         return chexint(hex[0]) * 16 /* radix */ + chexint(hex[1]);
     }
@@ -149,3 +143,5 @@ extern "C"
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* _HEXCVET_H */

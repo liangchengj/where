@@ -1,31 +1,53 @@
 /**
- * Created at 2020/7/14 07:14.
+ * Created at 2020/7/20 14:40.
  * 
  * In order to use JNI perfectly.
  * 
  * @author Liangcheng Juves
  */
-#ifdef __cplusplus
-extern "C"
-{
-#endif
-
 #ifndef _TCHA_H
 #define _TCHA_H
-#endif
 
-#include <jni.h>
+// #ifdef __cpluscplus
+extern "C"
+{
+// #endif
 
-    JNIEnv *__jnienv;
-    jclass jclz_this;
+#include "jni/jni.h"
+    JNIEnv *tcha_env;
 
-    void jnienvof(JNIEnv *env);
+    void envinit(JNIEnv *env);
 
-    void jnienvof(JNIEnv *env, jobject thiz)
+    jstring cstr_jstr(char const *cs);
+    char const *jstr_cstr(jstring jstr);
+
+    void envinit(JNIEnv *env)
     {
-       
+        tcha_env = env;
     }
 
-#ifdef __cplusplus
+#ifdef JNI_H_ /* Old */
+
+    jstring cstr_jstr(char const *cs)
+    {
+        return (*tcha_env)->Ne
+    }
+#elif defined(_JAVASOFT_JNI_H_) /* New */
+
+jstring cstr_jstr(char const *cs)
+{
+    return tcha_env->NewStringUTF(cs);
 }
-#endif
+
+char const *jstr_cstr(jstring jstr)
+{
+    return tcha_env->GetStringUTFChars(jstr, JNI_FALSE);
+}
+
+#endif /* JNI_H_ */
+
+// #ifdef __cpluscplus
+}
+// #endif
+
+#endif /* _TCHA_H */

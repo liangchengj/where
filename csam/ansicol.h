@@ -3,21 +3,16 @@
  * 
  * @author Liangcheng Juves
  */
+#ifndef _ANSICOL_H
+#define _ANSICOL_H
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-#ifndef _ANSICOL_H
-#define _ANSICOL_H
-#endif
-
 #include <string.h>
-
-#ifndef _LCJC_H
 #include "lcjc.h"
-#endif
 
 /* Black text. */
 #define ANSI_FG_BLACK "\033[30m"
@@ -140,3 +135,5 @@ extern "C"
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* _ANSICOL_H */
