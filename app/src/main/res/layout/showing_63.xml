@@ -20,7 +20,6 @@
         android:textSize="19dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:onClick="showingClick"
         style="?attr/borderlessButtonStyle"
         android:textAllCaps="false"
         android:text="Together"
