@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
-//apply plugin: 'AndResGuard'
+// apply plugin: 'AndResGuard'
 
 android {
     compileSdkVersion 28
@@ -31,28 +31,28 @@ android {
         }
     }
 
-    signingConfigs {
+    /* signingConfigs {
         config {
             storeFile file(KEY_PATH)
             storePassword KEY_PASS
             keyAlias ALIAS_NAME
             keyPassword ALIAS_PASS
         }
-    }
+    } */
 
 
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
+            // signingConfig signingConfigs.config
             shrinkResources true
         }
 
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
+            // signingConfig signingConfigs.config
         }
 
     }
