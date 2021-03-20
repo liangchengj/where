@@ -10,7 +10,7 @@ android {
         minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
-        versionName "2019.6.18"
+        versionName "2021.3.20"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         externalNativeBuild {
