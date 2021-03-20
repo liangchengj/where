@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="566" height="566" version="1.1" viewBox="0 0 566 566" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <clipPath id="clip0">
+            <rect x="356" y="76" width="568" height="568"/>
+        </clipPath>
+    </defs>
+    <g transform="translate(-357,-77)" clip-path="url(#clip0)" fill-rule="evenodd">
+        <path d="m357 195.3c0-65.335 52.965-118.3 118.3-118.3h329.4c65.335 0 118.3 52.965 118.3 118.3v329.4c0 65.335-52.965 118.3-118.3 118.3h-329.4c-65.335 0-118.3-52.965-118.3-118.3z" fill="#5279f2"/>
+        <path d="m589.87 309.87 217.49-117.24-117.24 217.49-217.49 117.24z" fill="#fff"/>
+        <path d="m597 360c0-23.748 19.252-43 43-43s43 19.252 43 43-19.252 43-43 43-43-19.252-43-43z" fill="#5279f2"/>
+    </g>
+</svg>
