@@ -62,7 +62,7 @@ extern "C"
 	Java_com_meyou_Me_getMimeByName(JNIEnv *env, jclass type, jstring name_)
 	{
 
-		vector<vector<string>> mime;
+		vector<vector<string> > mime;
 
 		vector<string> item_1;
 		item_1.push_back("123");

@@ -1,10 +1,12 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-android'
-// apply plugin: 'AndResGuard'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+//    id 'AndResGuard'
+}
 
 android {
     compileSdkVersion 28
+    ndkVersion "16.1.4479499"
     defaultConfig {
         applicationId "com.meyou.where"
         minSdkVersion 24
@@ -26,9 +28,23 @@ android {
             }
 
             ndk {
-                abiFilters 'x86', /* 'x86_64', */ 'armeabi-v7a' /* , 'arm64-v8a' */
+                abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
             }
         }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path 'CMakeLists.txt'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    viewBinding {
+        enabled = true
     }
 
     /* signingConfigs {
@@ -55,12 +71,6 @@ android {
             // signingConfig signingConfigs.config
         }
 
-    }
-
-    externalNativeBuild {
-        cmake {
-            path 'CMakeLists.txt'
-        }
     }
 
 
@@ -116,7 +126,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.android.support:support-v4:28.0.0'
