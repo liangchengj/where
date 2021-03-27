@@ -9,15 +9,19 @@ import com.meyou.Focus
 import com.meyou.UIState
 import com.meyou.UIState.HIDE_SYSTEM_BARS
 import com.meyou.where.Common.SHOW_CODE_PASSING
-import kotlinx.android.synthetic.main.splash.*
+import com.meyou.where.databinding.SplashBinding
+
+//import kotlinx.android.synthetic.main.splash.*
 
 @UIState(HIDE_SYSTEM_BARS)
 class Splash : Focus() {
 
+    private lateinit var binding: SplashBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.splash)
+        binding = SplashBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
         if (SDK_INT < O) {
@@ -26,8 +30,7 @@ class Splash : Focus() {
 
         }
 
-        splashText.startAnimation(loadAnimation(R.anim.splash_text_hide))
-
+        binding.splashText.startAnimation(loadAnimation(R.anim.splash_text_hide))
 
         if (SDK_INT >= O)
             setShortCuts(ShortcutInfo.Builder(applicationContext, "TWO")
@@ -45,7 +48,7 @@ class Splash : Focus() {
                             .setRank(1)
                             .build())
 
-        delay(600) {
+        delay(1500) {
             startActivity(Home::class.java)
             finish()
         }

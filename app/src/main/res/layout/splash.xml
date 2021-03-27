@@ -13,16 +13,16 @@
         app:srcCompat="@drawable/app_icon" />
 
     <TextView
-        android:textSize="10dp"
-        android:textStyle="bold"
         android:id="@+id/splashText"
-        android:textColor="@android:color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
-        android:text="Designed by DENGJIE" />
+        android:text="Designed by DENGJIE"
+        android:textColor="@android:color/black"
+        android:textSize="10dp"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>
