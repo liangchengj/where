@@ -44,7 +44,7 @@ jobs:
       - name: Sign APK
         run: |
           curl -O https://LiangchengJ:${{ secrets.GITHUB_TOKEN }}@raw.githubusercontent.com/LiangchengJ/skey/main/android_release.jks
-          jarsigner -verbose:all -sigalg SHA512withRSA -digestalg SHA-512 -keystore android_release.jks ./app/build/outputs/apk/release/app-release-unsigned.apk LiangchengJ
+          jarsigner -verbose:all -sigalg SHA512withRSA -digestalg SHA-512 -keystore android_release.jks -storepass ${{ secrets.SIGN_PASSWORD }} ./app/build/outputs/apk/release/app-release-unsigned.apk LiangchengJ
           mv ./app/build/outputs/apk/release/app-release-unsigned.apk ./app/build/outputs/apk/release/app-release.apk
 
       - name: Upload Release Asset
