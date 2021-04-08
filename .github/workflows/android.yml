@@ -29,7 +29,7 @@ jobs:
       - name: Sign APK
         run: |
           curl -O "https://LiangchengJ:${{ secrets.GITHUB_TOKEN }}@raw.githubusercontent.com/LiangchengJ/skey/main/sign.jks"
-          jarsigner -verbose:all -sigalg SHA512withRSA -digestalg SHA-512 -keystore sign.jks -keypass ${{ secrets.SIGN_KEYPASS }} -storepass ${{ secrets.SIGN_STOREPASS }} ./app/build/outputs/apk/release/app-release-unsigned.apk LiangchengJ
+          jarsigner -verbose:all -sigalg SHA512withRSA -digestalg SHA-512 -keystore sign.jks -keypass "${{ secrets.SIGN_KEYPASS }}" -storepass "${{ secrets.SIGN_STOREPASS }}" ./app/build/outputs/apk/release/app-release-unsigned.apk LiangchengJ
           mv ./app/build/outputs/apk/release/app-release-unsigned.apk ./app/build/outputs/apk/release/app-release.apk
 
       - name: Create Release
