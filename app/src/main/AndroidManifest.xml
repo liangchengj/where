@@ -17,6 +17,7 @@
         android:roundIcon="@drawable/app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/appTheme"
+        android:extractNativeLibs="true"
         android:usesCleartextTraffic="true">
 
         <service
